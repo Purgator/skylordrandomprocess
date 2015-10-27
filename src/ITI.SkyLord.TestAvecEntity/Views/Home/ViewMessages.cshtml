@@ -1,0 +1,16 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    // ViewBag.Title = "Home Page";
+}
+<html>
+<body>
+    <h1>All Messages</h1>
+    @foreach(var message in (List<ITI.SkyLord.TestAvecEntity.Models.Tchat>)ViewBag.messages)
+    {
+        <p>Message de @message.Personne : @message.Message</p>
+    }
+
+</body>
+</html>

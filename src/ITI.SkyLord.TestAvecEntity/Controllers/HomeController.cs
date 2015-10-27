@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using ITI.SkyLord.TestAvecEntity.Models;
 
 namespace ITI.SkyLord.TestAvecEntity.Controllers
 {
@@ -10,6 +11,26 @@ namespace ITI.SkyLord.TestAvecEntity.Controllers
     {
         public IActionResult Index()
         {
+
+            return View();
+        }
+
+        public IActionResult AddMessage()
+        {
+            using (var dal = new Dal())
+            {
+                dal.AddMessage("test", "testmessage");
+            }
+
+            return View();
+        }
+        public IActionResult ViewMessages()
+        {
+            using (var dal = new Dal())
+            {
+                var messages = dal.GetAllMessage();
+                ViewBag.messages = messages;
+            }
             
             return View();
         }

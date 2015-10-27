@@ -8,6 +8,9 @@ namespace ITI.SkyLord.TestAvecEntity.Models
 {
     public class BddContext : DbContext
     {
+
+        
+
         public DbSet<Tchat> Tchat { get; set; }
 
     }
