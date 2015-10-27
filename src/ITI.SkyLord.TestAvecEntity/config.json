@@ -1,0 +1,7 @@
+{
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-ITI.SkyLord.TestAvecEntity-b207e2e8-c88f-448a-9690-7dfdb9cd43c9;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}
