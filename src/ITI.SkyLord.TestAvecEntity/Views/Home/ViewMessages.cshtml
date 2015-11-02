@@ -9,7 +9,7 @@
     <h1>All Messages</h1>
     @foreach(var message in (List<ITI.SkyLord.TestAvecEntity.Models.Tchat>)ViewBag.messages)
     {
-        <p>Message de @message.Personne : @message.Message</p>
+        <p>Message de @message.Personne : @message.Message, @message.Date</p>
     }
 
 </body>

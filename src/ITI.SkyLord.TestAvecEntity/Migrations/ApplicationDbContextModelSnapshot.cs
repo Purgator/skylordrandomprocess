@@ -20,8 +20,6 @@ namespace ITI.SkyLord.TestAvecEntity.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("Date");
-
                     b.Property<string>("Message");
 
                     b.Property<string>("Personne");

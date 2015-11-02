@@ -30,7 +30,9 @@ namespace ITI.SkyLord.TestAvecEntity.Controllers
             using (var dal = new Dal())
             {
                 var messages = dal.GetAllMessage();
+                messages.Add(new Tchat() { Message = "Kikoo", Personne = "Antoine" });
                 ViewBag.messages = messages;
+                
             }
             
             return View();

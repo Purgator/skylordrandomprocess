@@ -23,7 +23,7 @@ namespace ITI.SkyLord.TestAvecEntity.Models
 
         public void AddMessage(string personne, string message)
         {
-            _bdd.Tchat.Add(new Tchat { Message = message, Personne = personne });
+            _bdd.Tchat.Add(new Tchat { Message = message, Personne = personne, Date = DateTime.Now });
             _bdd.SaveChanges();
         }
 
