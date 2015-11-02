@@ -9,6 +9,7 @@ using Microsoft.Dnx.Runtime;
 
 namespace ITI.SkyLord.TestAvecEntity.Models
 {
+    /*
     public class BddContext : DbContext
     {
 
@@ -22,4 +23,5 @@ namespace ITI.SkyLord.TestAvecEntity.Models
         public DbSet<Tchat> Tchat { get; set; }
 
     }
+    */
 }

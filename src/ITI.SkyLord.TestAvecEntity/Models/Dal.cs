@@ -8,11 +8,11 @@ namespace ITI.SkyLord.TestAvecEntity.Models
     public class Dal : IDisposable
     {
         
-        BddContext _bdd;
+        ApplicationDbContext _bdd;
 
         public Dal()
         {
-            _bdd = new BddContext();
+            _bdd = new ApplicationDbContext();
         }
 
 
