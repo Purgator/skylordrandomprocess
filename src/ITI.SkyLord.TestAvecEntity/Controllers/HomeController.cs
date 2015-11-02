@@ -12,7 +12,8 @@ namespace ITI.SkyLord.TestAvecEntity.Controllers
         public IActionResult Index()
         {
 
-            return View();
+            var t = View("Index");
+            return t;
         }
 
         public IActionResult AddMessage()
