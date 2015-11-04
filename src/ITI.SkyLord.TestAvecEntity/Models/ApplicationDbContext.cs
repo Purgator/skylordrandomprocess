@@ -25,7 +25,7 @@ namespace ITI.SkyLord.TestAvecEntity.Models
         {
             var appEnv = CallContextServiceLocator.Locator.ServiceProvider
                             .GetRequiredService<IApplicationEnvironment>();
-            optionsBuilder.UseNpgsql("Server=127.0.0.1;Port=5432;Database=Tchat;User Id=postgres;Password=dxzdvr;");
+            optionsBuilder.UseSqlServer( "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LeChat;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" );
         }
 
         public DbSet<Tchat> Tchat { get; set; }

@@ -18,7 +18,6 @@
         "Microsoft.AspNet.Identity": "3.0.0-beta8",
         "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
         "Microsoft.AspNet.Diagnostics": "1.0.0-beta8",
-        "EntityFramework7.Npgsql": "3.1.0-beta8-2",
         "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
         "Microsoft.AspNet.Diagnostics.Entity": "7.0.0-beta8",
         "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8"

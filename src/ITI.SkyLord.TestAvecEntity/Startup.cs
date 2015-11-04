@@ -44,9 +44,9 @@ namespace ITI.SkyLord.TestAvecEntity
         {
             // Add Entity Framework services to the services container.
             services.AddEntityFramework()
-                .AddNpgsql()
+                .AddSqlServer()
                 .AddDbContext<ApplicationDbContext>(options =>
-                    options.UseNpgsql(Configuration["Data:DefaultConnection:ConnectionString"]));
+                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
             
             // Add Identity services to the services container.
             services.AddIdentity<ApplicationUser, IdentityRole>()
