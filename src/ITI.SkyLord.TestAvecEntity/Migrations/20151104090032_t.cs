@@ -4,7 +4,7 @@ using Microsoft.Data.Entity.Migrations;
 
 namespace ITI.SkyLord.TestAvecEntity.Migrations
 {
-    public partial class MyFirstMigration : Migration
+    public partial class t : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,6 +14,7 @@ namespace ITI.SkyLord.TestAvecEntity.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:Serial", true),
+                    Date = table.Column<DateTime>(nullable: false),
                     Message = table.Column<string>(nullable: true),
                     Personne = table.Column<string>(nullable: true)
                 },

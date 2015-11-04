@@ -8,8 +8,8 @@ using ITI.SkyLord.TestAvecEntity.Models;
 namespace ITI.SkyLord.TestAvecEntity.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20151102152345_AddDateInMessage")]
-    partial class AddDateInMessage
+    [Migration("20151104090221_t2")]
+    partial class t2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,6 +26,8 @@ namespace ITI.SkyLord.TestAvecEntity.Migrations
                     b.Property<string>("Message");
 
                     b.Property<string>("Personne");
+
+                    b.Property<int>("age");
 
                     b.HasKey("ID");
                 });
