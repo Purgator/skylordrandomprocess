@@ -1,0 +1,11 @@
+configuration: Release
+
+# restore NuGet packages before running MSBuild
+before build:
+  - nuget restore
+  - dnu restore
+	
+# package Web Application projet for Web Deploy
+build:
+  verbosity: minimal
+  - dnx web
