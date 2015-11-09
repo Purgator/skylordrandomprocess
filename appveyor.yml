@@ -8,4 +8,4 @@ before build:
 # package Web Application projet for Web Deploy
 build:
   verbosity: minimal
-  - dnx web
+  publish_wap: true
