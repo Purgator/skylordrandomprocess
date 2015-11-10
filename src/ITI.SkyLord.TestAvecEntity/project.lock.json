@@ -3,6 +3,43 @@
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
+      "Cake/0.6.0": {
+        "type": "package"
+      },
+      "Cake.Common/0.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Core": "0.6.0"
+        },
+        "compile": {
+          "lib/net45/Cake.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Cake.Common.dll": {}
+        }
+      },
+      "Cake.Core/0.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Cake.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Cake.Core.dll": {}
+        }
+      },
+      "Code.Cake/0.6.2": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Common": "0.6.0",
+          "Cake.Core": "0.6.0"
+        },
+        "compile": {
+          "lib/net45/Code.Cake.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Code.Cake.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -1939,6 +1976,9 @@
       }
     },
     "DNXCore,Version=v5.0": {
+      "Cake/0.6.0": {
+        "type": "package"
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -4574,6 +4614,43 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
+      "Cake/0.6.0": {
+        "type": "package"
+      },
+      "Cake.Common/0.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Core": "0.6.0"
+        },
+        "compile": {
+          "lib/net45/Cake.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Cake.Common.dll": {}
+        }
+      },
+      "Cake.Core/0.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Cake.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Cake.Core.dll": {}
+        }
+      },
+      "Code.Cake/0.6.2": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Common": "0.6.0",
+          "Cake.Core": "0.6.0"
+        },
+        "compile": {
+          "lib/net45/Code.Cake.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Code.Cake.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -6513,6 +6590,43 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
+      "Cake/0.6.0": {
+        "type": "package"
+      },
+      "Cake.Common/0.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Core": "0.6.0"
+        },
+        "compile": {
+          "lib/net45/Cake.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Cake.Common.dll": {}
+        }
+      },
+      "Cake.Core/0.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Cake.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Cake.Core.dll": {}
+        }
+      },
+      "Code.Cake/0.6.2": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Common": "0.6.0",
+          "Cake.Core": "0.6.0"
+        },
+        "compile": {
+          "lib/net45/Code.Cake.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Code.Cake.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -8452,6 +8566,9 @@
       }
     },
     "DNXCore,Version=v5.0/win7-x86": {
+      "Cake/0.6.0": {
+        "type": "package"
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -11452,6 +11569,9 @@
       }
     },
     "DNXCore,Version=v5.0/win7-x64": {
+      "Cake/0.6.0": {
+        "type": "package"
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -14453,6 +14573,62 @@
     }
   },
   "libraries": {
+    "Cake/0.6.0": {
+      "type": "package",
+      "sha512": "5n60TlrCh0lP4TXayLSfwIWOJv7xkdzDMa85a58L1XH2JK6jalgXxcebG5Rgg6TSM2O63B+4+B7i/154XspORg==",
+      "files": [
+        "Autofac.dll",
+        "Cake.0.6.0.nupkg",
+        "Cake.0.6.0.nupkg.sha512",
+        "Cake.Common.dll",
+        "Cake.Common.xml",
+        "Cake.Core.dll",
+        "Cake.Core.xml",
+        "Cake.exe",
+        "Cake.nuspec",
+        "LICENSE",
+        "Mono.CSharp.dll",
+        "Nuget.Core.dll"
+      ]
+    },
+    "Cake.Common/0.6.0": {
+      "type": "package",
+      "sha512": "Xgdh4zsbqgkC7sUL6EmVVbe/aeCLz4IZKSt1Giof193B7qcxknyYId3zDfZ2d4O90aNMBOjpl51NHiCiGBtm2Q==",
+      "files": [
+        "Cake.Common.0.6.0.nupkg",
+        "Cake.Common.0.6.0.nupkg.sha512",
+        "Cake.Common.nuspec",
+        "lib/net45/Cake.Common.dll",
+        "lib/net45/Cake.Common.pdb",
+        "lib/net45/Cake.Common.xml",
+        "LICENSE"
+      ]
+    },
+    "Cake.Core/0.6.0": {
+      "type": "package",
+      "sha512": "VW6QhqeAg5e9ZyLWart1zkGQ1GM3wmkurixjni4AgCe5q2YyJTM/Q7/F7pZcI78eMQrv9auy+KRETtEVzUXV0w==",
+      "files": [
+        "Cake.Core.0.6.0.nupkg",
+        "Cake.Core.0.6.0.nupkg.sha512",
+        "Cake.Core.nuspec",
+        "lib/net45/Cake.Core.dll",
+        "lib/net45/Cake.Core.pdb",
+        "lib/net45/Cake.Core.xml",
+        "LICENSE"
+      ]
+    },
+    "Code.Cake/0.6.2": {
+      "type": "package",
+      "sha512": "877ezv8f86Kdvn5g1udY4I99F3y+fZ9V+bP7yV3zZ0u74OmQfo5bbsP/yJe9M2h9K/qyK16KGDX1Cz1xFwBmMw==",
+      "files": [
+        "Code.Cake.0.6.2.nupkg",
+        "Code.Cake.0.6.2.nupkg.sha512",
+        "Code.Cake.nuspec",
+        "lib/net45/Code.Cake.dll",
+        "lib/net45/Code.Cake.pdb",
+        "lib/net45/Code.Cake.xml"
+      ]
+    },
     "EntityFramework.Commands/7.0.0-beta8": {
       "type": "package",
       "serviceable": true,
@@ -19379,9 +19555,12 @@
       "Microsoft.AspNet.Diagnostics >= 1.0.0-beta8",
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-beta8",
       "Microsoft.AspNet.Diagnostics.Entity >= 7.0.0-beta8",
-      "Microsoft.Framework.Configuration.UserSecrets >= 1.0.0-beta8"
+      "Microsoft.Framework.Configuration.UserSecrets >= 1.0.0-beta8",
+      "Cake >= 0.6.0"
     ],
-    "DNX,Version=v4.5.1": [],
+    "DNX,Version=v4.5.1": [
+      "Code.Cake >= 0.6.2"
+    ],
     "DNXCore,Version=v5.0": []
   }
 }
