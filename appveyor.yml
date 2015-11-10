@@ -2,6 +2,4 @@ branches:
   only:
   - master
 install:
-- ps: build.ps1
-build_script:
-- CodeCakeBuilder\bin\Release\CodeCakeBuilder.exe -nointeraction
+- ps: Invoke-WebRequest -Uri http://nuget.org/nuget.exe -OutFile $nugetExe
