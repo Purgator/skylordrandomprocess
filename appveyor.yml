@@ -3,6 +3,6 @@ branches:
   - master
 install:
 - ps: Invoke-WebRequest -Uri http://nuget.org/nuget.exe -OutFile $nuget
-build:
+before_build:
 - cmd: nuget restore
 - cmd: echo a
