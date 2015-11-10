@@ -4,7 +4,6 @@ branches:
 install:
 - ps: Invoke-WebRequest -Uri http://nuget.org/nuget.exe -OutFile $nuget
 - cmd: echo a
-#Script pour installer DNVM
-- ps: &{$Branch='dev';iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1'))}
+- ps: $Branch='dev';iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1'))
 before_build:
 - cmd: dnu restore
