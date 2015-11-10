@@ -6,4 +6,4 @@ install:
 - cmd: echo a
 - ps: $Branch='dev';iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1'))
 before_build:
-- cmd: dnu restore
+- ps: dnu restore
