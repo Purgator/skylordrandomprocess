@@ -2,6 +2,6 @@ branches:
   only:
   - master
 install:
-- ps: CodeCakeBuilder\Bootstrap.ps1
+- ps: build.ps1
 build_script:
 - CodeCakeBuilder\bin\Release\CodeCakeBuilder.exe -nointeraction
