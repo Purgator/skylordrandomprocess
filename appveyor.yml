@@ -2,4 +2,7 @@ branches:
   only:
   - master
 install:
-- ps: Invoke-WebRequest -Uri http://nuget.org/nuget.exe -OutFile $nugetExe
+- ps: Invoke-WebRequest -Uri http://nuget.org/nuget.exe -OutFile $nuget
+build:
+- cmd: nuget restore
+- cmd: echo a
