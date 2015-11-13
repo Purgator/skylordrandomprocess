@@ -10,7 +10,6 @@ install:
 - ps: dnvm setup
 - ps: dnvm use default
 - ps: dnvm list
-before_build:
 - ps: dnu restore
 - cmd: cd src\ITI.SkyLord.TestAvecEntity.Tests
 - cmd: dnx test
