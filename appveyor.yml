@@ -14,3 +14,4 @@ before_build:
 - ps: dnu restore
 - cmd: cd src\ITI.SkyLord.TestAvecEntity.Tests
 - cmd: dnx test
+build: off
