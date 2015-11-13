@@ -1,6 +1,6 @@
 branches:
   only:
-  - master
+  - YoloGitOTD
 install:
 - ps: Invoke-WebRequest -Uri http://nuget.org/nuget.exe -OutFile $nuget
 - cmd: echo a
