@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ITI.SkyLord.TestAvecEntity.Tests": {
+      "commandName": "test",
+      "commandLineArgs": "--wait"
+    },
+    "test": {
+      "commandName": "test",
+      "commandLineArgs": "--wait"
+    }
+  }
+}

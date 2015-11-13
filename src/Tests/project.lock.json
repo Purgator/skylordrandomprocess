@@ -132,6 +132,31 @@
           "lib/net45/EntityFramework.SqlServer.dll": {}
         }
       },
+      "ITI.SkyLord.TestAvecEntity/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "EntityFramework.Commands": "7.0.0-beta8",
+          "EntityFramework.Core": "7.0.0-beta8",
+          "EntityFramework.SqlServer": "7.0.0-beta8",
+          "Microsoft.AspNet.Diagnostics": "1.0.0-beta8",
+          "Microsoft.AspNet.Diagnostics.Entity": "7.0.0-beta8",
+          "Microsoft.AspNet.Identity": "3.0.0-beta8",
+          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
+          "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
+          "Microsoft.AspNet.Mvc": "6.0.0-beta8",
+          "Microsoft.AspNet.Mvc.Razor": "6.0.0-beta8",
+          "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta8",
+          "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
+          "Microsoft.AspNet.StaticFiles": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8",
+          "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "NUnit": "3.0.0-rc-2",
+          "NUnit.Console": "3.0.0-rc-2"
+        }
+      },
       "Ix-Async/1.2.5": {
         "type": "package",
         "frameworkAssemblies": [
@@ -1740,6 +1765,18 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "NUnit/3.0.0-rc-2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/nunit.framework.dll": {}
+        }
+      },
+      "NUnit.Console/3.0.0-rc-2": {
+        "type": "package"
+      },
       "Remotion.Linq/2.0.0-beta-002": {
         "type": "package",
         "compile": {
@@ -2040,6 +2077,31 @@
         },
         "runtime": {
           "lib/dnxcore50/EntityFramework.SqlServer.dll": {}
+        }
+      },
+      "ITI.SkyLord.TestAvecEntity/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "EntityFramework.Commands": "7.0.0-beta8",
+          "EntityFramework.Core": "7.0.0-beta8",
+          "EntityFramework.SqlServer": "7.0.0-beta8",
+          "Microsoft.AspNet.Diagnostics": "1.0.0-beta8",
+          "Microsoft.AspNet.Diagnostics.Entity": "7.0.0-beta8",
+          "Microsoft.AspNet.Identity": "3.0.0-beta8",
+          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
+          "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
+          "Microsoft.AspNet.Mvc": "6.0.0-beta8",
+          "Microsoft.AspNet.Mvc.Razor": "6.0.0-beta8",
+          "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta8",
+          "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
+          "Microsoft.AspNet.StaticFiles": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8",
+          "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "NUnit": "3.0.0-rc-2",
+          "NUnit.Console": "3.0.0-rc-2"
         }
       },
       "Ix-Async/1.2.5": {
@@ -3514,6 +3576,18 @@
           "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll": {}
         }
       },
+      "NUnit/3.0.0-rc-2": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/nunit.framework.dll": {}
+        }
+      },
+      "NUnit.Console/3.0.0-rc-2": {
+        "type": "package"
+      },
       "Remotion.Linq/2.0.0-beta-002": {
         "type": "package",
         "compile": {
@@ -4701,6 +4775,31 @@
         },
         "runtime": {
           "lib/net45/EntityFramework.SqlServer.dll": {}
+        }
+      },
+      "ITI.SkyLord.TestAvecEntity/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "EntityFramework.Commands": "7.0.0-beta8",
+          "EntityFramework.Core": "7.0.0-beta8",
+          "EntityFramework.SqlServer": "7.0.0-beta8",
+          "Microsoft.AspNet.Diagnostics": "1.0.0-beta8",
+          "Microsoft.AspNet.Diagnostics.Entity": "7.0.0-beta8",
+          "Microsoft.AspNet.Identity": "3.0.0-beta8",
+          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
+          "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
+          "Microsoft.AspNet.Mvc": "6.0.0-beta8",
+          "Microsoft.AspNet.Mvc.Razor": "6.0.0-beta8",
+          "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta8",
+          "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
+          "Microsoft.AspNet.StaticFiles": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8",
+          "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "NUnit": "3.0.0-rc-2",
+          "NUnit.Console": "3.0.0-rc-2"
         }
       },
       "Ix-Async/1.2.5": {
@@ -6314,6 +6413,18 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "NUnit/3.0.0-rc-2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/nunit.framework.dll": {}
+        }
+      },
+      "NUnit.Console/3.0.0-rc-2": {
+        "type": "package"
+      },
       "Remotion.Linq/2.0.0-beta-002": {
         "type": "package",
         "compile": {
@@ -6640,6 +6751,31 @@
         },
         "runtime": {
           "lib/net45/EntityFramework.SqlServer.dll": {}
+        }
+      },
+      "ITI.SkyLord.TestAvecEntity/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "EntityFramework.Commands": "7.0.0-beta8",
+          "EntityFramework.Core": "7.0.0-beta8",
+          "EntityFramework.SqlServer": "7.0.0-beta8",
+          "Microsoft.AspNet.Diagnostics": "1.0.0-beta8",
+          "Microsoft.AspNet.Diagnostics.Entity": "7.0.0-beta8",
+          "Microsoft.AspNet.Identity": "3.0.0-beta8",
+          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
+          "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
+          "Microsoft.AspNet.Mvc": "6.0.0-beta8",
+          "Microsoft.AspNet.Mvc.Razor": "6.0.0-beta8",
+          "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta8",
+          "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
+          "Microsoft.AspNet.StaticFiles": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8",
+          "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "NUnit": "3.0.0-rc-2",
+          "NUnit.Console": "3.0.0-rc-2"
         }
       },
       "Ix-Async/1.2.5": {
@@ -8253,6 +8389,18 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "NUnit/3.0.0-rc-2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/nunit.framework.dll": {}
+        }
+      },
+      "NUnit.Console/3.0.0-rc-2": {
+        "type": "package"
+      },
       "Remotion.Linq/2.0.0-beta-002": {
         "type": "package",
         "compile": {
@@ -8553,6 +8701,31 @@
         },
         "runtime": {
           "lib/dnxcore50/EntityFramework.SqlServer.dll": {}
+        }
+      },
+      "ITI.SkyLord.TestAvecEntity/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "EntityFramework.Commands": "7.0.0-beta8",
+          "EntityFramework.Core": "7.0.0-beta8",
+          "EntityFramework.SqlServer": "7.0.0-beta8",
+          "Microsoft.AspNet.Diagnostics": "1.0.0-beta8",
+          "Microsoft.AspNet.Diagnostics.Entity": "7.0.0-beta8",
+          "Microsoft.AspNet.Identity": "3.0.0-beta8",
+          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
+          "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
+          "Microsoft.AspNet.Mvc": "6.0.0-beta8",
+          "Microsoft.AspNet.Mvc.Razor": "6.0.0-beta8",
+          "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta8",
+          "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
+          "Microsoft.AspNet.StaticFiles": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8",
+          "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "NUnit": "3.0.0-rc-2",
+          "NUnit.Console": "3.0.0-rc-2"
         }
       },
       "Ix-Async/1.2.5": {
@@ -10029,6 +10202,18 @@
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll": {}
         }
+      },
+      "NUnit/3.0.0-rc-2": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/nunit.framework.dll": {}
+        }
+      },
+      "NUnit.Console/3.0.0-rc-2": {
+        "type": "package"
       },
       "Remotion.Linq/2.0.0-beta-002": {
         "type": "package",
@@ -11555,6 +11740,31 @@
           "lib/dnxcore50/EntityFramework.SqlServer.dll": {}
         }
       },
+      "ITI.SkyLord.TestAvecEntity/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "EntityFramework.Commands": "7.0.0-beta8",
+          "EntityFramework.Core": "7.0.0-beta8",
+          "EntityFramework.SqlServer": "7.0.0-beta8",
+          "Microsoft.AspNet.Diagnostics": "1.0.0-beta8",
+          "Microsoft.AspNet.Diagnostics.Entity": "7.0.0-beta8",
+          "Microsoft.AspNet.Identity": "3.0.0-beta8",
+          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
+          "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
+          "Microsoft.AspNet.Mvc": "6.0.0-beta8",
+          "Microsoft.AspNet.Mvc.Razor": "6.0.0-beta8",
+          "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta8",
+          "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
+          "Microsoft.AspNet.StaticFiles": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8",
+          "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8",
+          "NUnit": "3.0.0-rc-2",
+          "NUnit.Console": "3.0.0-rc-2"
+        }
+      },
       "Ix-Async/1.2.5": {
         "type": "package",
         "compile": {
@@ -13030,6 +13240,18 @@
           "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll": {}
         }
       },
+      "NUnit/3.0.0-rc-2": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/nunit.framework.dll": {}
+        }
+      },
+      "NUnit.Console/3.0.0-rc-2": {
+        "type": "package"
+      },
       "Remotion.Linq/2.0.0-beta-002": {
         "type": "package",
         "compile": {
@@ -14453,6 +14675,10 @@
     }
   },
   "libraries": {
+    "ITI.SkyLord.TestAvecEntity/1.0.0": {
+      "type": "project",
+      "path": "../ITI.SkyLord.TestAvecEntity/project.json"
+    },
     "EntityFramework.Commands/7.0.0-beta8": {
       "type": "package",
       "serviceable": true,
@@ -15935,6 +16161,58 @@
         "Newtonsoft.Json.6.0.6.nupkg.sha512",
         "Newtonsoft.Json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "NUnit/3.0.0-rc-2": {
+      "type": "package",
+      "sha512": "ieIXPYakCLxL6RZUJzhxNCU8xZXlLQO5Cc1bxBMUdI1R8gwVHlntinVPFm31gudRQ8I14FMAqpSNQxrhjh5lGg==",
+      "files": [
+        "CHANGES.txt",
+        "lib/dotnet/nunit.framework.dll",
+        "lib/dotnet/nunit.framework.xml",
+        "lib/net20/nunit.framework.dll",
+        "lib/net20/nunit.framework.xml",
+        "lib/net40/nunit.framework.dll",
+        "lib/net40/nunit.framework.xml",
+        "lib/net45/nunit.framework.dll",
+        "lib/net45/nunit.framework.xml",
+        "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.dll",
+        "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.xml",
+        "LICENSE.txt",
+        "NOTICES.txt",
+        "NUnit.3.0.0-rc-2.nupkg",
+        "NUnit.3.0.0-rc-2.nupkg.sha512",
+        "NUnit.nuspec"
+      ]
+    },
+    "NUnit.Console/3.0.0-rc-2": {
+      "type": "package",
+      "sha512": "TWv3CFt5SXlpoZ0kBmzJuTjFpz4Kq6lkaY1/0BUE6wwK/eqG2L/R6k74xqVNNQnFSCp9d1bIuqAheQNZCx6IQA==",
+      "files": [
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "NOTICES.txt",
+        "NUnit.Console.3.0.0-rc-2.nupkg",
+        "NUnit.Console.3.0.0-rc-2.nupkg.sha512",
+        "NUnit.Console.nuspec",
+        "tools/addins/nunit.core.dll",
+        "tools/addins/nunit.core.interfaces.dll",
+        "tools/addins/nunit.v2.driver.dll",
+        "tools/addins/nunit-project-loader.dll",
+        "tools/addins/nunit-v2-result-writer.dll",
+        "tools/addins/vs-project-loader.dll",
+        "tools/Mono.Cecil.dll",
+        "tools/nunit.engine.addin.xml",
+        "tools/nunit.engine.addins",
+        "tools/nunit.engine.api.dll",
+        "tools/nunit.engine.api.xml",
+        "tools/nunit.engine.dll",
+        "tools/nunit3-console.exe",
+        "tools/nunit3-console.exe.config",
+        "tools/nunit-agent.exe",
+        "tools/nunit-agent.exe.config",
+        "tools/nunit-agent-x86.exe",
+        "tools/nunit-agent-x86.exe.config"
       ]
     },
     "Remotion.Linq/2.0.0-beta-002": {
@@ -19363,25 +19641,17 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.AspNet.Mvc >= 6.0.0-beta8",
-      "Microsoft.AspNet.IISPlatformHandler >= 1.0.0-beta8",
-      "Microsoft.AspNet.Server.Kestrel >= 1.0.0-beta8",
-      "Microsoft.AspNet.StaticFiles >= 1.0.0-beta8",
-      "Microsoft.AspNet.Mvc.TagHelpers >= 6.0.0-beta8",
-      "Microsoft.AspNet.Mvc.Razor >= 6.0.0-beta8",
-      "Microsoft.Framework.Configuration.Json >= 1.0.0-beta8",
-      "EntityFramework.Core >= 7.0.0-beta8",
-      "EntityFramework.SqlServer >= 7.0.0-beta8",
-      "EntityFramework.Commands >= 7.0.0-beta8",
-      "Microsoft.Framework.Logging.Debug >= 1.0.0-beta8",
-      "Microsoft.AspNet.Identity >= 3.0.0-beta8",
-      "Microsoft.AspNet.Identity.EntityFramework >= 3.0.0-beta8",
-      "Microsoft.AspNet.Diagnostics >= 1.0.0-beta8",
-      "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-beta8",
-      "Microsoft.AspNet.Diagnostics.Entity >= 7.0.0-beta8",
-      "Microsoft.Framework.Configuration.UserSecrets >= 1.0.0-beta8"
+      "ITI.SkyLord.TestAvecEntity >= 1.0.0-*"
     ],
     "DNX,Version=v4.5.1": [],
-    "DNXCore,Version=v5.0": []
+    "DNXCore,Version=v5.0": [
+      "Microsoft.CSharp >= 4.0.1-beta-23409",
+      "System.Collections >= 4.0.11-beta-23409",
+      "System.Linq >= 4.0.1-beta-23409",
+      "System.Runtime >= 4.0.21-beta-23409",
+      "System.Threading >= 4.0.11-beta-23409",
+      "NUnit >= 3.0.0-rc-2",
+      "NUnit.Console >= 3.0.0-rc-2"
+    ]
   }
 }

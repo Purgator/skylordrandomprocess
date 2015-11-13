@@ -8,13 +8,14 @@ using ITI.SkyLord.TestAvecEntity.Models;
 namespace ITI.SkyLord.TestAvecEntity.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20151104090032_t")]
-    partial class t
+    [Migration("20151104102839_1")]
+    partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .Annotation("ProductVersion", "7.0.0-beta8-15964");
+                .Annotation("ProductVersion", "7.0.0-beta8-15964")
+                .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("ITI.SkyLord.TestAvecEntity.Models.Tchat", b =>
                 {

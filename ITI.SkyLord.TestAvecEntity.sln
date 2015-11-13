@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ITI.SkyLord.TestAvecEntity", "src\ITI.SkyLord.TestAvecEntity\ITI.SkyLord.TestAvecEntity.xproj", "{E0A4D245-552C-44ED-A22C-69FBC478D9B8}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ITI.SkyLord.TestAvecEntity.Tests", "src\ITI.SkyLord.TestAvecEntity.Tests\ITI.SkyLord.TestAvecEntity.Tests.xproj", "{5AF6FF2B-C056-4856-8FCA-471F4FF170D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,11 +25,16 @@ Global
 		{E0A4D245-552C-44ED-A22C-69FBC478D9B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0A4D245-552C-44ED-A22C-69FBC478D9B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0A4D245-552C-44ED-A22C-69FBC478D9B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AF6FF2B-C056-4856-8FCA-471F4FF170D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AF6FF2B-C056-4856-8FCA-471F4FF170D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AF6FF2B-C056-4856-8FCA-471F4FF170D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AF6FF2B-C056-4856-8FCA-471F4FF170D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E0A4D245-552C-44ED-A22C-69FBC478D9B8} = {56B481DF-DCF2-4397-9AA8-A2AA14DB9045}
+		{5AF6FF2B-C056-4856-8FCA-471F4FF170D4} = {56B481DF-DCF2-4397-9AA8-A2AA14DB9045}
 	EndGlobalSection
 EndGlobal

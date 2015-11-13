@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0-*",
+  "description": "ITI.SkyLord.TestAvecEntity.Tests Class Library",
+  "authors": [ "KevinRoussel" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+    "frameworks": {
+        "dnx451": { },
+        "dnxcore50": {
+            "dependencies": {
+            }
+        }
+    },
+    "dependencies": {
+        "ITI.SkyLord.TestAvecEntity": "1.0.0-*",
+        "NUnitLite": "3.0.0-rc-2"
+    },
+    "commands": {
+        "test" : "ITI.SkyLord.TestAvecEntity.Tests"
+    }
+
+}
