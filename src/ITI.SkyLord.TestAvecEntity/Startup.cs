@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Builder;
+﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
-using Microsoft.Dnx.Runtime;
-using Microsoft.Framework.Configuration;
-using Microsoft.Framework.DependencyInjection;
-using Microsoft.Framework.Logging;
 using ITI.SkyLord.TestAvecEntity.Models;
 using ITI.SkyLord.TestAvecEntity.Services;
 using Microsoft.AspNet.Diagnostics.Entity;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.PlatformAbstractions;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
 
 namespace ITI.SkyLord.TestAvecEntity
-    {
+{
     public class Startup
     {
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
@@ -78,7 +74,7 @@ namespace ITI.SkyLord.TestAvecEntity
             {
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage(DatabaseErrorPageOptions.ShowAll);
+                app.UseDatabaseErrorPage();
             }
             else
             {

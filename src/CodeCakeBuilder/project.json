@@ -1,0 +1,19 @@
+{
+  "authors": [ "Aymeric" ],
+  "commands": {
+    "CodeCakeBuilder": "CodeCakeBuilder"
+  },
+  "dependencies": {
+    "Code.Cake": "0.6.2",
+    "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final",
+    "SimpleGitVersion.Cake": "0.9.0"
+  },
+  "description": "CodeCakeBuilder Class Library",
+  "frameworks": {
+    "dnx451": { }
+  },
+  "licenseUrl": "",
+  "projectUrl": "",
+  "tags": [ "" ],
+  "version": "1.0.0-*"
+}

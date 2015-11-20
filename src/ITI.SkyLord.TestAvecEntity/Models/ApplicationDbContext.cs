@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.Data.Entity;
-using Microsoft.Dnx.Runtime.Infrastructure;
-using Microsoft.Framework.DependencyInjection;
-using Microsoft.Dnx.Runtime;
+﻿using Microsoft.Data.Entity;
+using Microsoft.Extensions.PlatformAbstractions;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ITI.SkyLord.TestAvecEntity.Models
 {
-    
+
     public class ApplicationDbContext : DbContext
     {
         protected override void OnModelCreating(ModelBuilder builder)

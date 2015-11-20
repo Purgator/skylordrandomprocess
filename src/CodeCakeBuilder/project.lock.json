@@ -1,0 +1,314 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    "DNX,Version=v4.5.1": {
+      "Cake.Common/0.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Core": "0.6.0"
+        },
+        "compile": {
+          "lib/net45/Cake.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Cake.Common.dll": {}
+        }
+      },
+      "Cake.Core/0.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Cake.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Cake.Core.dll": {}
+        }
+      },
+      "Code.Cake/0.6.2": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Common": "0.6.0",
+          "Cake.Core": "0.6.0"
+        },
+        "compile": {
+          "lib/net45/Code.Cake.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Code.Cake.dll": {}
+        }
+      },
+      "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        }
+      },
+      "SimpleGitVersion.Cake/0.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Core": "0.5.5",
+          "SimpleGitVersion.Core": "0.9.0"
+        },
+        "compile": {
+          "lib/net45/SimpleGitVersion.Cake.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SimpleGitVersion.Cake.dll": {}
+        }
+      },
+      "SimpleGitVersion.Core/0.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SimpleGitVersion.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SimpleGitVersion.Core.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x86": {
+      "Cake.Common/0.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Core": "0.6.0"
+        },
+        "compile": {
+          "lib/net45/Cake.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Cake.Common.dll": {}
+        }
+      },
+      "Cake.Core/0.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Cake.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Cake.Core.dll": {}
+        }
+      },
+      "Code.Cake/0.6.2": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Common": "0.6.0",
+          "Cake.Core": "0.6.0"
+        },
+        "compile": {
+          "lib/net45/Code.Cake.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Code.Cake.dll": {}
+        }
+      },
+      "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        }
+      },
+      "SimpleGitVersion.Cake/0.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Core": "0.5.5",
+          "SimpleGitVersion.Core": "0.9.0"
+        },
+        "compile": {
+          "lib/net45/SimpleGitVersion.Cake.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SimpleGitVersion.Cake.dll": {}
+        }
+      },
+      "SimpleGitVersion.Core/0.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SimpleGitVersion.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SimpleGitVersion.Core.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x64": {
+      "Cake.Common/0.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Core": "0.6.0"
+        },
+        "compile": {
+          "lib/net45/Cake.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Cake.Common.dll": {}
+        }
+      },
+      "Cake.Core/0.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Cake.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Cake.Core.dll": {}
+        }
+      },
+      "Code.Cake/0.6.2": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Common": "0.6.0",
+          "Cake.Core": "0.6.0"
+        },
+        "compile": {
+          "lib/net45/Code.Cake.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Code.Cake.dll": {}
+        }
+      },
+      "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        }
+      },
+      "SimpleGitVersion.Cake/0.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Cake.Core": "0.5.5",
+          "SimpleGitVersion.Core": "0.9.0"
+        },
+        "compile": {
+          "lib/net45/SimpleGitVersion.Cake.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SimpleGitVersion.Cake.dll": {}
+        }
+      },
+      "SimpleGitVersion.Core/0.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SimpleGitVersion.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SimpleGitVersion.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Cake.Common/0.6.0": {
+      "type": "package",
+      "sha512": "Xgdh4zsbqgkC7sUL6EmVVbe/aeCLz4IZKSt1Giof193B7qcxknyYId3zDfZ2d4O90aNMBOjpl51NHiCiGBtm2Q==",
+      "files": [
+        "Cake.Common.0.6.0.nupkg",
+        "Cake.Common.0.6.0.nupkg.sha512",
+        "Cake.Common.nuspec",
+        "lib/net45/Cake.Common.dll",
+        "lib/net45/Cake.Common.pdb",
+        "lib/net45/Cake.Common.xml",
+        "LICENSE"
+      ]
+    },
+    "Cake.Core/0.6.0": {
+      "type": "package",
+      "sha512": "VW6QhqeAg5e9ZyLWart1zkGQ1GM3wmkurixjni4AgCe5q2YyJTM/Q7/F7pZcI78eMQrv9auy+KRETtEVzUXV0w==",
+      "files": [
+        "Cake.Core.0.6.0.nupkg",
+        "Cake.Core.0.6.0.nupkg.sha512",
+        "Cake.Core.nuspec",
+        "lib/net45/Cake.Core.dll",
+        "lib/net45/Cake.Core.pdb",
+        "lib/net45/Cake.Core.xml",
+        "LICENSE"
+      ]
+    },
+    "Code.Cake/0.6.2": {
+      "type": "package",
+      "sha512": "877ezv8f86Kdvn5g1udY4I99F3y+fZ9V+bP7yV3zZ0u74OmQfo5bbsP/yJe9M2h9K/qyK16KGDX1Cz1xFwBmMw==",
+      "files": [
+        "Code.Cake.0.6.2.nupkg",
+        "Code.Cake.0.6.2.nupkg.sha512",
+        "Code.Cake.nuspec",
+        "lib/net45/Code.Cake.dll",
+        "lib/net45/Code.Cake.pdb",
+        "lib/net45/Code.Cake.xml"
+      ]
+    },
+    "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "26HS4c6MBisN+D7XUr8HObOI/JJvSJQYQR//Bfw/hi9UqhqK3lFpNKjOuYHI+gTxYdXT46HqZiz4D+k7d+ob3A==",
+      "files": [
+        "lib/dotnet5.4/Microsoft.Extensions.PlatformAbstractions.dll",
+        "lib/dotnet5.4/Microsoft.Extensions.PlatformAbstractions.xml",
+        "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll",
+        "lib/net451/Microsoft.Extensions.PlatformAbstractions.xml",
+        "Microsoft.Extensions.PlatformAbstractions.1.0.0-rc1-final.nupkg",
+        "Microsoft.Extensions.PlatformAbstractions.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.Extensions.PlatformAbstractions.nuspec"
+      ]
+    },
+    "SimpleGitVersion.Cake/0.9.0": {
+      "type": "package",
+      "sha512": "xUSirkTzeH6PfLVgkTdObF/A8zvWvvEukEJBHwV6UDo0QGhIEJM25F3YEBxsKsxReroJSphTnd2YLwUbmkGUAw==",
+      "files": [
+        "lib/net45/SimpleGitVersion.Cake.dll",
+        "lib/net45/SimpleGitVersion.Cake.xml",
+        "SimpleGitVersion.Cake.0.9.0.nupkg",
+        "SimpleGitVersion.Cake.0.9.0.nupkg.sha512",
+        "SimpleGitVersion.Cake.nuspec"
+      ]
+    },
+    "SimpleGitVersion.Core/0.9.0": {
+      "type": "package",
+      "sha512": "YWeh7YgRGdB+bpQ3r6+6GUaIWwb59rEczpJKkuq2yriCJap4nxF4h4X/35pU2sB4YYT9CblaKN0UvmxmFiwbFw==",
+      "files": [
+        "Build/SimpleGitVersion.Core.props",
+        "lib/net45/SimpleGitVersion.Core.dll",
+        "lib/net45/SimpleGitVersion.Core.pdb",
+        "lib/net45/SimpleGitVersion.Core.xml",
+        "NativeBinaries/amd64/git2-e0902fb.dll",
+        "NativeBinaries/x86/git2-e0902fb.dll",
+        "RepositoryInfo.xsd",
+        "SimpleGitVersion.Core.0.9.0.nupkg",
+        "SimpleGitVersion.Core.0.9.0.nupkg.sha512",
+        "SimpleGitVersion.Core.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "Code.Cake >= 0.6.2",
+      "Microsoft.Extensions.PlatformAbstractions >= 1.0.0-rc1-final",
+      "SimpleGitVersion.Cake >= 0.9.0"
+    ],
+    "DNX,Version=v4.5.1": []
+  }
+}
