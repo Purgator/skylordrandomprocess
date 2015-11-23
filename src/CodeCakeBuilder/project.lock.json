@@ -52,11 +52,11 @@
           "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "SimpleGitVersion.Cake/0.9.0": {
+      "SimpleGitVersion.Cake/0.10.0": {
         "type": "package",
         "dependencies": {
           "Cake.Core": "0.5.5",
-          "SimpleGitVersion.Core": "0.9.0"
+          "SimpleGitVersion.Core": "0.10.0"
         },
         "compile": {
           "lib/net45/SimpleGitVersion.Cake.dll": {}
@@ -65,7 +65,7 @@
           "lib/net45/SimpleGitVersion.Cake.dll": {}
         }
       },
-      "SimpleGitVersion.Core/0.9.0": {
+      "SimpleGitVersion.Core/0.10.0": {
         "type": "package",
         "compile": {
           "lib/net45/SimpleGitVersion.Core.dll": {}
@@ -125,11 +125,11 @@
           "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "SimpleGitVersion.Cake/0.9.0": {
+      "SimpleGitVersion.Cake/0.10.0": {
         "type": "package",
         "dependencies": {
           "Cake.Core": "0.5.5",
-          "SimpleGitVersion.Core": "0.9.0"
+          "SimpleGitVersion.Core": "0.10.0"
         },
         "compile": {
           "lib/net45/SimpleGitVersion.Cake.dll": {}
@@ -138,7 +138,7 @@
           "lib/net45/SimpleGitVersion.Cake.dll": {}
         }
       },
-      "SimpleGitVersion.Core/0.9.0": {
+      "SimpleGitVersion.Core/0.10.0": {
         "type": "package",
         "compile": {
           "lib/net45/SimpleGitVersion.Core.dll": {}
@@ -198,11 +198,11 @@
           "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "SimpleGitVersion.Cake/0.9.0": {
+      "SimpleGitVersion.Cake/0.10.0": {
         "type": "package",
         "dependencies": {
           "Cake.Core": "0.5.5",
-          "SimpleGitVersion.Core": "0.9.0"
+          "SimpleGitVersion.Core": "0.10.0"
         },
         "compile": {
           "lib/net45/SimpleGitVersion.Cake.dll": {}
@@ -211,7 +211,7 @@
           "lib/net45/SimpleGitVersion.Cake.dll": {}
         }
       },
-      "SimpleGitVersion.Core/0.9.0": {
+      "SimpleGitVersion.Core/0.10.0": {
         "type": "package",
         "compile": {
           "lib/net45/SimpleGitVersion.Core.dll": {}
@@ -275,20 +275,20 @@
         "Microsoft.Extensions.PlatformAbstractions.nuspec"
       ]
     },
-    "SimpleGitVersion.Cake/0.9.0": {
+    "SimpleGitVersion.Cake/0.10.0": {
       "type": "package",
-      "sha512": "xUSirkTzeH6PfLVgkTdObF/A8zvWvvEukEJBHwV6UDo0QGhIEJM25F3YEBxsKsxReroJSphTnd2YLwUbmkGUAw==",
+      "sha512": "L2Z3vqO9czsc1/7VHfuhD8AeGUVg6aaQx+8s0zYnmYkPlegzh+HuRrocbFicdjnj2s2qQEB/wR34XAIKlo7LaQ==",
       "files": [
         "lib/net45/SimpleGitVersion.Cake.dll",
         "lib/net45/SimpleGitVersion.Cake.xml",
-        "SimpleGitVersion.Cake.0.9.0.nupkg",
-        "SimpleGitVersion.Cake.0.9.0.nupkg.sha512",
+        "SimpleGitVersion.Cake.0.10.0.nupkg",
+        "SimpleGitVersion.Cake.0.10.0.nupkg.sha512",
         "SimpleGitVersion.Cake.nuspec"
       ]
     },
-    "SimpleGitVersion.Core/0.9.0": {
+    "SimpleGitVersion.Core/0.10.0": {
       "type": "package",
-      "sha512": "YWeh7YgRGdB+bpQ3r6+6GUaIWwb59rEczpJKkuq2yriCJap4nxF4h4X/35pU2sB4YYT9CblaKN0UvmxmFiwbFw==",
+      "sha512": "dCgOWMjymuCtO5U4FP7DFB0tB2iEbLtFa7CBf+Jlq8NkOsrp49WWSZWQ3y1FF7SnP00xmM/4cHY7hrcmQ15eag==",
       "files": [
         "Build/SimpleGitVersion.Core.props",
         "lib/net45/SimpleGitVersion.Core.dll",
@@ -297,8 +297,8 @@
         "NativeBinaries/amd64/git2-e0902fb.dll",
         "NativeBinaries/x86/git2-e0902fb.dll",
         "RepositoryInfo.xsd",
-        "SimpleGitVersion.Core.0.9.0.nupkg",
-        "SimpleGitVersion.Core.0.9.0.nupkg.sha512",
+        "SimpleGitVersion.Core.0.10.0.nupkg",
+        "SimpleGitVersion.Core.0.10.0.nupkg.sha512",
         "SimpleGitVersion.Core.nuspec"
       ]
     }
@@ -307,7 +307,7 @@
     "": [
       "Code.Cake >= 0.6.2",
       "Microsoft.Extensions.PlatformAbstractions >= 1.0.0-rc1-final",
-      "SimpleGitVersion.Cake >= 0.9.0"
+      "SimpleGitVersion.Cake >= 0.10.0"
     ],
     "DNX,Version=v4.5.1": []
   }
