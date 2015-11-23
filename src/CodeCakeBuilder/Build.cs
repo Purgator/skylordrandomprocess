@@ -31,7 +31,6 @@ namespace CodeCake
     {
         public Build()
         {
-            Console.WriteLine( "ICI" );
             var nugetOutputDir = Cake.Directory( "CodeCakeBuilder/Release" );
             DNXSolution dnxSolution = null;
             IEnumerable<DNXProjectFile> projectsToPublish = null;
@@ -51,25 +50,37 @@ namespace CodeCake
             } );
 
 
-            Task( "Clean" )
+            Task( "Test" )
               .Does( () =>
               {
-                  Console.WriteLine( "Coucou la famille" );
-                  Cake.CleanDirectories( "**/bin/" + configuration, d => !d.Path.Segments.Contains( "CodeCakeBuilder" ) );
-                  Cake.CleanDirectories( "**/obj/" + configuration, d => !d.Path.Segments.Contains( "CodeCakeBuilder" ) );
-                  Cake.DeleteFiles( "Tests/**/TestResult.xml" );
+                  gitInfo = dnxSolution.RepositoryInfo;
+                  if( !gitInfo.IsValid )
+                  {
+                      if( Cake.IsInteractiveMode()
+                          && Cake.ReadInteractiveOption( "Repository is not ready to be published. Proceed anyway?", 'Y', 'N' ) == 'Y' )
+                      {
+                          Cake.Warning( "GitInfo is not valid, but you choose to continue..." );
+                      }
+                      else throw new Exception( "Repository is not ready to be published." );
+                  }
+                  configuration = gitInfo.IsValidRelease && gitInfo.PreReleaseName.Length == 0 ? "Release" : "Debug";
+                  Cake.Information( "Publishing {0} projects with version={1} and configuration={2}: {3}",
+                      projectsToPublish.Count(),
+                      gitInfo.SemVer,
+                      configuration,
+                      String.Join( ", ", projectsToPublish.Select( p => p.ProjectName ) ) );
               } );
 
 
             Task( "Build" )
-                .IsDependentOn( "Clean" )
+                .IsDependentOn( "Test" )
                 .Does( () =>
                 {
                     Console.WriteLine( "Build" );
                 } );
 
          
-            Task( "Default" ).IsDependentOn( "Clean" );
+            Task( "Default" ).IsDependentOn( "Test" );
 
         }
     }
