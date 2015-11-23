@@ -4,64 +4,68 @@ using Cake.Common.IO;
 using Cake.Common.Tools.MSBuild;
 using Cake.Common.Tools.NuGet;
 using Cake.Core;
-using Code.Cake;
 using Cake.Common.Diagnostics;
+using SimpleGitVersion;
+using Code.Cake;
+using Cake.Common.Build.AppVeyor;
 using Cake.Common.Tools.NuGet.Pack;
-using System.Linq;
-using Cake.Core.Diagnostics;
-using Cake.Common.Tools.NuGet.Restore;
 using System;
+using System.Linq;
+using Cake.Common.Tools.SignTool;
+using Cake.Core.Diagnostics;
+using Cake.Common.Text;
 using Cake.Common.Tools.NuGet.Push;
-using CodeCake;
+using System.IO;
+using System.Collections.Generic;
+using System.Diagnostics;
+using Microsoft.Extensions.PlatformAbstractions;
 
-namespace CodeCakeBuilder
+namespace CodeCake
 {
-   
     /// <summary>
     /// Sample build "script".
-    /// Build scripts can be decorated with AddPath attributes that inject existing paths into the PATH environment variable. 
+    /// It can be decorated with AddPath attributes that inject paths into the PATH environment variable. 
     /// </summary>
     [AddPath( "CodeCakeBuilder/Tools" )]
-    [AddPath( "packages/**/tools*" )]
     public class Build : CodeCakeHost
     {
         public Build()
         {
-            // The configuration ("Debug", etc.) defaults to "Release".
-            var configuration = Cake.Argument( "configuration", "Release" );
+            Console.WriteLine( "ICI" );
+            var nugetOutputDir = Cake.Directory( "CodeCakeBuilder/Release" );
+            DNXSolution dnxSolution = null;
+            IEnumerable<DNXProjectFile> projectsToPublish = null;
+            SimpleRepositoryInfo gitInfo = null;
+            string configuration = null;
 
-            // Git .ignore file should ignore this folder.
-            // Here, we name it "Releases" (default , it could be "Artefacts", "Publish" or anything else, 
-            // but "Releases" is by default ignored in https://github.com/github/gitignore/blob/master/VisualStudio.gitignore.
-            var releasesDir = Cake.Directory( "CodeCakeBuilder/Releases" );
+            Setup( () =>
+            {
+                dnxSolution = Cake.GetDNXSolution( p => p.ProjectName != "CodeCakeBuilder" );
+                if( !dnxSolution.IsValid ) throw new Exception( "Unable to initialize solution." );
+                projectsToPublish = dnxSolution.Projects.Where( p => !p.ProjectName.EndsWith( "Tests" ) );
+            } );
+
+            Teardown( () =>
+            {
+                dnxSolution.RestoreProjectFiles();
+            } );
+
 
             Task( "Clean" )
-                .Does( () =>
-                {
-                    // Avoids cleaning CodeCakeBuilder itself!
-                    Cake.CleanDirectories( "**/bin/" + configuration, d => !d.Path.Segments.Contains( "CodeCakeBuilder" ) );
-                    Cake.CleanDirectories( "**/obj/" + configuration, d => !d.Path.Segments.Contains( "CodeCakeBuilder" ) );
-                    Cake.CleanDirectories( releasesDir );
-                } );
+              .Does( () =>
+              {
+                  Console.WriteLine( "Coucou la famille" );
+                  Cake.CleanDirectories( "**/bin/" + configuration, d => !d.Path.Segments.Contains( "CodeCakeBuilder" ) );
+                  Cake.CleanDirectories( "**/obj/" + configuration, d => !d.Path.Segments.Contains( "CodeCakeBuilder" ) );
+                  Cake.DeleteFiles( "Tests/**/TestResult.xml" );
+              } );
 
-           
+
             Task( "Build" )
                 .IsDependentOn( "Clean" )
                 .Does( () =>
                 {
-                    Cake.Information( "Building all existing .sln files at the root level with '{0}' configuration (excluding this builder application).", configuration );
-                    foreach( var sln in Cake.GetFiles( "*.sln" ) )
-                    {
-                        using( var tempSln = Cake.CreateTemporarySolutionFile( sln ) )
-                        {
-                            // Excludes "CodeCakeBuilder" itself from compilation!
-                            tempSln.ExcludeProjectsFromBuild( "CodeCakeBuilder" );
-                            Cake.MSBuild( tempSln.FullPath, new MSBuildSettings()
-                                    .SetConfiguration( configuration )
-                                    .SetVerbosity( Verbosity.Minimal )
-                                    .SetMaxCpuCount( 1 ) );
-                        }
-                    }
+                    Console.WriteLine( "Build" );
                 } );
 
          

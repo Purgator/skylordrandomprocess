@@ -7,19 +7,13 @@ using Microsoft.Extensions.PlatformAbstractions;
 
 namespace CodeCakeBuilder
 {
-    public class Program
+    public static class Program
     {
-        string _solutionDir;
-
-        public Program( IApplicationEnvironment appEnv )
+        public static int Main( string[] args )
         {
-            _solutionDir = Path.GetDirectoryName( appEnv.ApplicationBasePath );
-        }
-        public int Main( string[] args )
-        {
-            Console.ReadKey();
+            string solutionDir = Path.GetDirectoryName( PlatformServices.Default.Application.ApplicationBasePath );
 #if DNX50
-            var app = new CodeCakeApplication( _solutionDir, typeof(Program).Assembly );
+            var app = new CodeCakeApplication( solutionDir, typeof(Program).Assembly );
 #else
             var app = new CodeCakeApplication();
 #endif

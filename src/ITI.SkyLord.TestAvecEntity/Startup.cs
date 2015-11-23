@@ -4,7 +4,6 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
 using ITI.SkyLord.TestAvecEntity.Models;
 using ITI.SkyLord.TestAvecEntity.Services;
-using Microsoft.AspNet.Diagnostics.Entity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.Extensions.Logging;
