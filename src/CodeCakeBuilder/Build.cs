@@ -31,7 +31,6 @@ namespace CodeCake
     {
         public Build()
         {
-            var nugetOutputDir = Cake.Directory( "CodeCakeBuilder/Release" );
             DNXSolution dnxSolution = null;
             IEnumerable<DNXProjectFile> projectsToPublish = null;
             SimpleRepositoryInfo gitInfo = null;
@@ -49,8 +48,16 @@ namespace CodeCake
                 dnxSolution.RestoreProjectFiles();
             } );
 
-
-            Task( "Test" )
+            Task( "Verbosity" )
+                .Does( () =>
+                {
+                    Console.WriteLine( "Identified Projects in solution : " );
+                    foreach( DNXProjectFile project in dnxSolution.Projects)
+                    {
+                        Console.WriteLine( project.ProjectName );
+                    }
+                } );
+            Task( "Check-Repository" )
               .Does( () =>
               {
                   gitInfo = dnxSolution.RepositoryInfo;
@@ -71,17 +78,74 @@ namespace CodeCake
                       String.Join( ", ", projectsToPublish.Select( p => p.ProjectName ) ) );
               } );
 
-
-            Task( "Build" )
-                .IsDependentOn( "Test" )
+            Task( "Set-ProjectVersion" )
+                .IsDependentOn( "Check-Repository" )
                 .Does( () =>
                 {
-                    Console.WriteLine( "Build" );
+                    if( dnxSolution.UpdateProjectFiles() > 0 )
+                    {
+                        // dnu restore
+                        Cake.DNURestore(restore =>
+                        {
+                            restore.Quiet = true;
+                            restore.ProjectPaths.UnionWith( dnxSolution.Projects.Select( p => p.ProjectFilePath ) );
+                            Console.WriteLine( "dnu restore" );
+                        } );
+                    }
                 } );
 
-         
-            Task( "Default" ).IsDependentOn( "Test" );
+            Task( "Clean" )
+                .Does( () =>
+                {
+                    Code.Cake.CommandRunner.RunCmd( Cake, "echo %cd%" );
+                    Cake.CleanDirectories( "../*/*/*/*/*/*/bin/" + configuration, d => !d.Path.Segments.Contains( "CodeCakeBuilder" ) );
+                    Cake.CleanDirectories( "../*/*/*/*/*/*/obj/" + configuration, d => !d.Path.Segments.Contains( "CodeCakeBuilder" ) );
+                } );
 
+            Task( "Unit-Testing" )
+               .IsDependentOn( "Check-Repository" )
+               .Does( () =>
+               {
+                   var testProjects = dnxSolution.Projects.Where( p => p.ProjectName.EndsWith( ".Tests" ) );
+                   foreach( var p in testProjects )
+                   {
+                       foreach( var framework in p.Frameworks )
+                       {
+                           Cake.DNXRun( c => {
+                               c.Arguments = "test";
+                               c.Configuration = configuration;
+                               c.Framework = framework;
+                               c.Project = p.ProjectFilePath;
+                           } );
+                       }
+                   }
+               } );
+            Task( "Build-And-Pack" )
+               .IsDependentOn( "Clean" )
+               .IsDependentOn( "Unit-Testing" )
+               .IsDependentOn( "Set-ProjectVersion" )
+               .Does( () =>
+               {
+                   Cake.DNUBuild( c =>
+                   {
+                       c.GeneratePackage = true;
+                       c.Configurations.Add( configuration );
+                       c.ProjectPaths.UnionWith( dnxSolution.Projects.Select( p => p.ProjectDir ) );
+                       c.Quiet = true;
+                   } );
+               } );
+
+         
+            Task( "Default" ).IsDependentOn( "Build-And-Pack" ).IsDependentOn( "Verbosity" );
+
+
+    }
+        private static string GetRunningRuntimeFramework()
+        {
+            string f = PlatformServices.Default.Runtime.RuntimePath;
+            if( f[f.Length - 1] == Path.DirectorySeparatorChar ) f = Path.GetDirectoryName( f );
+            f = Path.GetFileName( Path.GetDirectoryName( f ) );
+            return f.Substring( f.IndexOf( '.' ) + 1 );
         }
     }
 
