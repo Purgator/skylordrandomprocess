@@ -73,6 +73,15 @@
         "runtime": {
           "lib/net45/SimpleGitVersion.Core.dll": {}
         }
+      },
+      "SSH.NET/2013.4.7": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Renci.SshNet.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Renci.SshNet.dll": {}
+        }
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
@@ -146,6 +155,15 @@
         "runtime": {
           "lib/net45/SimpleGitVersion.Core.dll": {}
         }
+      },
+      "SSH.NET/2013.4.7": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Renci.SshNet.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Renci.SshNet.dll": {}
+        }
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
@@ -218,6 +236,15 @@
         },
         "runtime": {
           "lib/net45/SimpleGitVersion.Core.dll": {}
+        }
+      },
+      "SSH.NET/2013.4.7": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Renci.SshNet.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Renci.SshNet.dll": {}
         }
       }
     }
@@ -301,13 +328,35 @@
         "SimpleGitVersion.Core.0.10.0.nupkg.sha512",
         "SimpleGitVersion.Core.nuspec"
       ]
+    },
+    "SSH.NET/2013.4.7": {
+      "type": "package",
+      "sha512": "rfwoGFYG6P58FZp5SlSrnEYjWfHaLZ13zEDNZhnaP/FHGaCuLphO1eh1IMazu/XxaxVhDrfAsTuRO2L6mTSK6w==",
+      "files": [
+        "lib/net35/Renci.SshNet.dll",
+        "lib/net35/Renci.SshNet.XML",
+        "lib/net40/Renci.SshNet.dll",
+        "lib/net40/Renci.SshNet.xml",
+        "lib/sl3-wp/Renci.SshNet.WindowsPhone.dll",
+        "lib/sl3-wp/Renci.SshNet.WindowsPhone.XML",
+        "lib/sl40/Renci.SshNet.Silverlight.dll",
+        "lib/sl40/Renci.SshNet.Silverlight.XML",
+        "lib/sl50/Renci.SshNet.Silverlight.dll",
+        "lib/sl50/Renci.SshNet.Silverlight.XML",
+        "lib/wp8/Renci.SshNet.WindowsPhone.dll",
+        "lib/wp8/Renci.SshNet.WindowsPhone.XML",
+        "SSH.NET.2013.4.7.nupkg",
+        "SSH.NET.2013.4.7.nupkg.sha512",
+        "SSH.NET.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "": [
       "Code.Cake >= 0.6.2",
       "Microsoft.Extensions.PlatformAbstractions >= 1.0.0-rc1-final",
-      "SimpleGitVersion.Cake >= 0.10.0"
+      "SimpleGitVersion.Cake >= 0.10.0",
+      "SSH.NET >= 2013.4.7"
     ],
     "DNX,Version=v4.5.1": []
   }
