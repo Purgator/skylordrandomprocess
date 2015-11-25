@@ -1,6 +1,13 @@
 branches:
   only:
   - YoloGitOTD
+
+environment:
+  login:
+    secure: QVVZdMDAB+h7xdgg5hUH0A==
+  password:
+    secure: cP2Y38dqqK4GfySbblU1Fg==
+	
 install:
 - ps: Invoke-WebRequest -Uri http://nuget.org/nuget.exe -OutFile $nuget
 - cmd: echo a

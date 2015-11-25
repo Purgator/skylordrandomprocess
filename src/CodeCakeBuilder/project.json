@@ -3,11 +3,12 @@
   "commands": {
     "CodeCakeBuilder": "CodeCakeBuilder"
   },
-  "dependencies": {
-    "Code.Cake": "0.6.2",
-    "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final",
-    "SimpleGitVersion.Cake": "0.10.0"
-  },
+    "dependencies": {
+        "Code.Cake": "0.6.2",
+        "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final",
+        "SimpleGitVersion.Cake": "0.10.0",
+        "SSH.NET": "2013.4.7"
+    },
   "description": "CodeCakeBuilder Class Library",
   "frameworks": {
     "dnx451": { }

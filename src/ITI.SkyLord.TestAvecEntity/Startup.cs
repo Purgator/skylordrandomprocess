@@ -16,7 +16,6 @@ namespace ITI.SkyLord.TestAvecEntity
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
             // Setup configuration sources.
-
             var builder = new ConfigurationBuilder()
                 .SetBasePath(appEnv.ApplicationBasePath)
                 .AddJsonFile("config.json")
