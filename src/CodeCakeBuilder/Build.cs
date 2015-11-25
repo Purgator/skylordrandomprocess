@@ -114,7 +114,7 @@ namespace CodeCake
                            Cake.DNXRun( c => {
                                c.Arguments = "test";
                                c.Configuration = configuration;
-                               c.Framework = framework;
+                               c.Framework = null;
                                c.Project = p.ProjectFilePath;
                            } );
                        }
@@ -136,17 +136,10 @@ namespace CodeCake
                } );
 
          
-            Task( "Default" ).IsDependentOn( "Build-And-Pack" ).IsDependentOn( "Verbosity" );
+            Task( "Default" ).IsDependentOn( "Verbosity" ).IsDependentOn( "Build-And-Pack" );
 
 
     }
-        private static string GetRunningRuntimeFramework()
-        {
-            string f = PlatformServices.Default.Runtime.RuntimePath;
-            if( f[f.Length - 1] == Path.DirectorySeparatorChar ) f = Path.GetDirectoryName( f );
-            f = Path.GetFileName( Path.GetDirectoryName( f ) );
-            return f.Substring( f.IndexOf( '.' ) + 1 );
-        }
     }
 
 }
