@@ -35,7 +35,12 @@ namespace Code.Cake
                 return Framework == null || Regex.IsMatch( Framework, @"^dnx\d+$" );
             }
         }
+        /// <summary>
+        /// Waits for the debugger to attach before beginning execution.
+        /// </summary>
+        public bool Debug { get; set; }
 
+        /// <summary>
         /// <summary>
         /// Gets or sets the path to the project.json file or the application folder. 
         /// Defaults to the current folder if not provided.
@@ -75,6 +80,10 @@ namespace Code.Cake
             if( Configuration != null )
             {
                 b.Append( " --configuration " ).Append( Configuration.ToUpperInvariant() );
+            }
+            if( Debug )
+            {
+                b.Append( " --debug " );
             }
             if( AppBase != null )
             {

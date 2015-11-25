@@ -40,19 +40,20 @@ namespace CodeCake
             {
                 dnxSolution = Cake.GetDNXSolution( p => p.ProjectName != "CodeCakeBuilder" );
                 if( !dnxSolution.IsValid ) throw new Exception( "Unable to initialize solution." );
-                projectsToPublish = dnxSolution.Projects.Where( p => !p.ProjectName.EndsWith( "Tests" ) );
+                projectsToPublish = dnxSolution.Projects.Where( p => !p.ProjectName.EndsWith( ".Tests" ) );
             } );
 
             Teardown( () =>
             {
                 dnxSolution.RestoreProjectFiles();
+                //Loic est pd
             } );
 
             Task( "Verbosity" )
                 .Does( () =>
                 {
                     Console.WriteLine( "Identified Projects in solution : " );
-                    foreach( DNXProjectFile project in dnxSolution.Projects)
+                    foreach( DNXProjectFile project in dnxSolution.Projects )
                     {
                         Console.WriteLine( project.ProjectName );
                     }
@@ -84,26 +85,31 @@ namespace CodeCake
                 {
                     if( dnxSolution.UpdateProjectFiles() > 0 )
                     {
-                        // dnu restore
-                        Cake.DNURestore(restore =>
-                        {
-                            restore.Quiet = true;
-                            restore.ProjectPaths.UnionWith( dnxSolution.Projects.Select( p => p.ProjectFilePath ) );
-                            Console.WriteLine( "dnu restore" );
-                        } );
+                        Cake.DNURestore( restore =>
+                         {
+                             restore.Quiet = true;
+                             restore.ProjectPaths.UnionWith( dnxSolution.Projects.Select( p => p.ProjectFilePath ) );
+                             Console.WriteLine( "dnu restore" );
+                         } );
                     }
                 } );
 
             Task( "Clean" )
                 .Does( () =>
                 {
-                    Code.Cake.CommandRunner.RunCmd( Cake, "echo %cd%" );
-                    Cake.CleanDirectories( "../*/*/*/*/*/*/bin/" + configuration, d => !d.Path.Segments.Contains( "CodeCakeBuilder" ) );
-                    Cake.CleanDirectories( "../*/*/*/*/*/*/obj/" + configuration, d => !d.Path.Segments.Contains( "CodeCakeBuilder" ) );
+                  
+                        Cake.CleanDirectories( "*/bin" + configuration,
+                            ( d ) =>
+                            {
+                                return (d.Path.Segments.Contains( "ITI.SkyLord.TestAvecEntity" ) || d.Path.Segments.Contains( "ITI.SkyLord.TestAvecEntity.Tests" ));
+                            } );
+
+                    Console.ReadKey();
+                    Cake.CleanDirectories( "**/obj/" + configuration, d => !d.Path.Segments.Contains( "CodeCakeBuilder" ) );
                 } );
 
             Task( "Unit-Testing" )
-               .IsDependentOn( "Check-Repository" )
+               .IsDependentOn( "Set-ProjectVersion" )
                .Does( () =>
                {
                    var testProjects = dnxSolution.Projects.Where( p => p.ProjectName.EndsWith( ".Tests" ) );
@@ -111,7 +117,8 @@ namespace CodeCake
                    {
                        foreach( var framework in p.Frameworks )
                        {
-                           Cake.DNXRun( c => {
+                           Cake.DNXRun( c =>
+                           {
                                c.Arguments = "test";
                                c.Configuration = configuration;
                                c.Framework = null;
@@ -122,24 +129,25 @@ namespace CodeCake
                } );
             Task( "Build-And-Pack" )
                .IsDependentOn( "Clean" )
-               .IsDependentOn( "Unit-Testing" )
                .IsDependentOn( "Set-ProjectVersion" )
+               .IsDependentOn( "Unit-Testing" )
                .Does( () =>
                {
                    Cake.DNUBuild( c =>
                    {
                        c.GeneratePackage = true;
+                     //  configuration = "Release";
                        c.Configurations.Add( configuration );
-                       c.ProjectPaths.UnionWith( dnxSolution.Projects.Select( p => p.ProjectDir ) );
+                       c.ProjectPaths.UnionWith( projectsToPublish.Select( p => p.ProjectDir ) );
                        c.Quiet = true;
                    } );
                } );
 
-         
+
             Task( "Default" ).IsDependentOn( "Verbosity" ).IsDependentOn( "Build-And-Pack" );
 
 
-    }
+        }
     }
 
 }

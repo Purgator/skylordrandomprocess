@@ -1,7 +1,7 @@
 {
   "webroot": "wwwroot",
   "userSecretsId": "aspnet5-WebApplication111-ee202245-7ea9-4dc1-b039-869e354f2c8c",
-  "version": "1.0.0-*",
+  "version": "0.0.0-Absolutely-Invalid",
 
   "dependencies": {
     "EntityFramework.Commands": "7.0.0-rc1-final",

@@ -126,7 +126,7 @@
           "lib/dnx451/EntityFramework.Relational.Design.dll": {}
         }
       },
-      "ITI.SkyLord.TestAvecEntity/1.0.0": {
+      "ITI.SkyLord.TestAvecEntity/0.0.0-Absolutely-Invalid": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
@@ -2080,7 +2080,7 @@
           "lib/dnxcore50/EntityFramework.Relational.Design.dll": {}
         }
       },
-      "ITI.SkyLord.TestAvecEntity/1.0.0": {
+      "ITI.SkyLord.TestAvecEntity/0.0.0-Absolutely-Invalid": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
@@ -4774,7 +4774,7 @@
           "lib/dnx451/EntityFramework.Relational.Design.dll": {}
         }
       },
-      "ITI.SkyLord.TestAvecEntity/1.0.0": {
+      "ITI.SkyLord.TestAvecEntity/0.0.0-Absolutely-Invalid": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
@@ -6756,7 +6756,7 @@
           "lib/dnx451/EntityFramework.Relational.Design.dll": {}
         }
       },
-      "ITI.SkyLord.TestAvecEntity/1.0.0": {
+      "ITI.SkyLord.TestAvecEntity/0.0.0-Absolutely-Invalid": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
@@ -8713,7 +8713,7 @@
           "lib/dnxcore50/EntityFramework.Relational.Design.dll": {}
         }
       },
-      "ITI.SkyLord.TestAvecEntity/1.0.0": {
+      "ITI.SkyLord.TestAvecEntity/0.0.0-Absolutely-Invalid": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
@@ -11859,7 +11859,7 @@
           "lib/dnxcore50/EntityFramework.Relational.Design.dll": {}
         }
       },
-      "ITI.SkyLord.TestAvecEntity/1.0.0": {
+      "ITI.SkyLord.TestAvecEntity/0.0.0-Absolutely-Invalid": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
@@ -14908,7 +14908,7 @@
     }
   },
   "libraries": {
-    "ITI.SkyLord.TestAvecEntity/1.0.0": {
+    "ITI.SkyLord.TestAvecEntity/0.0.0-Absolutely-Invalid": {
       "type": "project",
       "path": "../ITI.SkyLord.TestAvecEntity/project.json"
     },
@@ -20592,7 +20592,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "ITI.SkyLord.TestAvecEntity >= 1.0.0-*",
+      "ITI.SkyLord.TestAvecEntity >= 0.0.0-Absolutely-Invalid",
       "NUnitLite >= 3.0.0-rc-2"
     ],
     "DNX,Version=v4.5.1": [],
