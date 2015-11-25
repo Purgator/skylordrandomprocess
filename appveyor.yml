@@ -9,15 +9,10 @@ environment:
     secure: cP2Y38dqqK4GfySbblU1Fg==
 	
 install:
-- ps: Invoke-WebRequest -Uri http://nuget.org/nuget.exe -OutFile $nuget
-- cmd: echo a
-- ps: $Branch='dev';iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1'))
-- ps: dnvm upgrade -r coreclr
-- ps: dnvm list
-- ps: dnvm setup
-- ps: dnvm use default
-- ps: dnvm list
-- ps: dnu restore
-- cmd: cd src\ITI.SkyLord.TestAvecEntity.Tests
-- cmd: dnx test
-build: off
+- CodeCakeBuilder/Bootstrap.cmd
+- dnvm use -p -r clr 1.0.0-rc1-final
+- dnu commands install SimpleGitVersion.DNXCommands
+- dnu restore
+build_script:
+- dnx -p CodeCakeBuilder CodeCakeBuilder -nointeraction
+test: off
