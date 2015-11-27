@@ -52,11 +52,11 @@
           "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "SimpleGitVersion.Cake/0.10.1-Cexplore-0003": {
+      "SimpleGitVersion.Cake/0.10.1-Cexplore-0006": {
         "type": "package",
         "dependencies": {
           "Cake.Core": "0.6.0",
-          "SimpleGitVersion.Core": "0.10.1-Cexplore-0003"
+          "SimpleGitVersion.Core": "0.10.1-Cexplore-0006"
         },
         "compile": {
           "lib/net45/SimpleGitVersion.Cake.dll": {}
@@ -65,7 +65,7 @@
           "lib/net45/SimpleGitVersion.Cake.dll": {}
         }
       },
-      "SimpleGitVersion.Core/0.10.1-Cexplore-0003": {
+      "SimpleGitVersion.Core/0.10.1-Cexplore-0006": {
         "type": "package",
         "compile": {
           "lib/net45/SimpleGitVersion.Core.dll": {}
@@ -134,11 +134,11 @@
           "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "SimpleGitVersion.Cake/0.10.1-Cexplore-0003": {
+      "SimpleGitVersion.Cake/0.10.1-Cexplore-0006": {
         "type": "package",
         "dependencies": {
           "Cake.Core": "0.6.0",
-          "SimpleGitVersion.Core": "0.10.1-Cexplore-0003"
+          "SimpleGitVersion.Core": "0.10.1-Cexplore-0006"
         },
         "compile": {
           "lib/net45/SimpleGitVersion.Cake.dll": {}
@@ -147,7 +147,7 @@
           "lib/net45/SimpleGitVersion.Cake.dll": {}
         }
       },
-      "SimpleGitVersion.Core/0.10.1-Cexplore-0003": {
+      "SimpleGitVersion.Core/0.10.1-Cexplore-0006": {
         "type": "package",
         "compile": {
           "lib/net45/SimpleGitVersion.Core.dll": {}
@@ -216,11 +216,11 @@
           "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
         }
       },
-      "SimpleGitVersion.Cake/0.10.1-Cexplore-0003": {
+      "SimpleGitVersion.Cake/0.10.1-Cexplore-0006": {
         "type": "package",
         "dependencies": {
           "Cake.Core": "0.6.0",
-          "SimpleGitVersion.Core": "0.10.1-Cexplore-0003"
+          "SimpleGitVersion.Core": "0.10.1-Cexplore-0006"
         },
         "compile": {
           "lib/net45/SimpleGitVersion.Cake.dll": {}
@@ -229,7 +229,7 @@
           "lib/net45/SimpleGitVersion.Cake.dll": {}
         }
       },
-      "SimpleGitVersion.Core/0.10.1-Cexplore-0003": {
+      "SimpleGitVersion.Core/0.10.1-Cexplore-0006": {
         "type": "package",
         "compile": {
           "lib/net45/SimpleGitVersion.Core.dll": {}
@@ -302,20 +302,20 @@
         "Microsoft.Extensions.PlatformAbstractions.nuspec"
       ]
     },
-    "SimpleGitVersion.Cake/0.10.1-Cexplore-0003": {
+    "SimpleGitVersion.Cake/0.10.1-Cexplore-0006": {
       "type": "package",
-      "sha512": "DD8UZ+74XhTs+KJJTyD1AAEZxfBeC+3779xwd1eclBWgXqrScwPQR8RC9pU7G2LUyAua9f97mlPC+hP7t1soTQ==",
+      "sha512": "Ft6nVUlZ532VTxZYmWD1/JWb+AbhMmMShwjXB1+voNv7VwCAAe02E6kOvhHZZjoaJaQCziZw6XVzhaOjVWxeIA==",
       "files": [
         "lib/net45/SimpleGitVersion.Cake.dll",
         "lib/net45/SimpleGitVersion.Cake.xml",
-        "SimpleGitVersion.Cake.0.10.1-Cexplore-0003.nupkg",
-        "SimpleGitVersion.Cake.0.10.1-Cexplore-0003.nupkg.sha512",
+        "SimpleGitVersion.Cake.0.10.1-Cexplore-0006.nupkg",
+        "SimpleGitVersion.Cake.0.10.1-Cexplore-0006.nupkg.sha512",
         "SimpleGitVersion.Cake.nuspec"
       ]
     },
-    "SimpleGitVersion.Core/0.10.1-Cexplore-0003": {
+    "SimpleGitVersion.Core/0.10.1-Cexplore-0006": {
       "type": "package",
-      "sha512": "kepntw8vop0COubK1twYgoNbXtQtMBkY43Y94MQgvzQY/TVYWw+w42Lr7jESwQJKUX8UQQZmU8Tsfsvt9IHU2w==",
+      "sha512": "7RBw4AL0SBo26+pz2v1deH8IGwuE3tYWt9/ImYq0F4qVBi9iPTnJC98KqWDj+2c+KVK7wqkaCyDzfFlPRmL81g==",
       "files": [
         "Build/SimpleGitVersion.Core.props",
         "lib/net45/SimpleGitVersion.Core.dll",
@@ -324,8 +324,8 @@
         "NativeBinaries/amd64/git2-e0902fb.dll",
         "NativeBinaries/x86/git2-e0902fb.dll",
         "RepositoryInfo.xsd",
-        "SimpleGitVersion.Core.0.10.1-Cexplore-0003.nupkg",
-        "SimpleGitVersion.Core.0.10.1-Cexplore-0003.nupkg.sha512",
+        "SimpleGitVersion.Core.0.10.1-Cexplore-0006.nupkg",
+        "SimpleGitVersion.Core.0.10.1-Cexplore-0006.nupkg.sha512",
         "SimpleGitVersion.Core.nuspec"
       ]
     },
@@ -355,7 +355,7 @@
     "": [
       "Code.Cake >= 0.6.2",
       "Microsoft.Extensions.PlatformAbstractions >= 1.0.0-rc1-final",
-      "SimpleGitVersion.Cake >= 0.10.1-Cexplore-0003",
+      "SimpleGitVersion.Cake >= 0.10.1-Cexplore-0006",
       "SSH.NET >= 2013.4.7"
     ],
     "DNX,Version=v4.5.1": []
