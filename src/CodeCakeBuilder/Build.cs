@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.Extensions.PlatformAbstractions;
 using Renci.SshNet;
+using Cake.Core.IO;
 
 namespace CodeCake
 {
@@ -98,17 +99,26 @@ namespace CodeCake
             Task( "Clean" )
                 .Does( () =>
                 {
-                  
-                        Cake.CleanDirectories( "*/bin" + configuration,
+                    Cake.CleanDirectories( "*/bin" + configuration,
                             ( d ) =>
                             {
-                                return (d.Path.Segments.Contains( "ITI.SkyLord.TestAvecEntity" ) || d.Path.Segments.Contains( "ITI.SkyLord.TestAvecEntity.Tests" ));
+                                foreach( DNXProjectFile projet in dnxSolution.Projects )
+                                {
+                                    if( d.Path.Segments.Contains( projet.ProjectName ) )
+                                        return true;
+                                }
+                                return false;
                             } );
 
                     Cake.CleanDirectories( "*/obj" + configuration,
                            ( d ) =>
                            {
-                               return (d.Path.Segments.Contains( "ITI.SkyLord.TestAvecEntity" ) || d.Path.Segments.Contains( "ITI.SkyLord.TestAvecEntity.Tests" ));
+                               foreach( DNXProjectFile projet in dnxSolution.Projects )
+                               {
+                                   if( d.Path.Segments.Contains( projet.ProjectName ) )
+                                       return true;
+                               }
+                               return false;
                            } );
                 } );
 
@@ -125,14 +135,14 @@ namespace CodeCake
                            {
                                c.Arguments = "test";
                                c.Configuration = configuration;
-                               c.Framework = null;
+                               c.Framework = framework;
                                c.Project = p.ProjectFilePath;
                            } );
                        }
                    }
                } );
 
-       
+
 
             Task( "Build-And-Pack" )
                .IsDependentOn( "Clean" )
@@ -143,7 +153,7 @@ namespace CodeCake
                    Cake.DNUBuild( c =>
                    {
                        c.GeneratePackage = true;
-                     //  configuration = "Release";
+                       //  configuration = "Release";
                        c.Configurations.Add( configuration );
                        c.ProjectPaths.UnionWith( projectsToPublish.Select( p => p.ProjectDir ) );
                        c.Quiet = true;
@@ -151,19 +161,19 @@ namespace CodeCake
                } );
 
             Task( "Deploy" )
-           .IsDependentOn( "Build-And-Pack")
+           .IsDependentOn( "Build-And-Pack" )
            .Does( () =>
            {
 
                var login = Environment.GetEnvironmentVariable("login");
                var password= Environment.GetEnvironmentVariable("password");
 
-                    /* 
-                      Code référence
-                      http://stackoverflow.com/questions/11169396/c-sharp-send-a-simple-ssh-command
-                    */
-                    // Se connecte en SSH à notre serveur de prod
-                    using( SshClient mySSH = new SshClient( "10.8.99.163", 22, login, password ) )
+               /* 
+                 Code référence
+                 http://stackoverflow.com/questions/11169396/c-sharp-send-a-simple-ssh-command
+               */
+               // Se connecte en SSH à notre serveur de prod
+               using( SshClient mySSH = new SshClient( "10.8.99.163", 22, login, password ) )
                {
                    mySSH.Connect();
                    string stopServer = "killall -SIGSTOP coreclr";
@@ -171,31 +181,31 @@ namespace CodeCake
                    string updateDatabase = "";
                    string runServer = "dnx web -p \"pathOfTheProject\"";
 
-                        // Arrête le serveur qui tourne
-                        mySSH.RunCommand( stopServer );
+                   // Arrête le serveur qui tourne
+                   mySSH.RunCommand( stopServer );
 
-                        // Envoi le package sur le serveur de prod en SFTP
-                        /* 
-                            POUR LA DOC SFTP 
-                            https://sshnet.codeplex.com/wikipage?title=Draft%20for%20Documentation%20page
-                        */
+                   // Envoi le package sur le serveur de prod en SFTP
+                   /* 
+                       POUR LA DOC SFTP 
+                       https://sshnet.codeplex.com/wikipage?title=Draft%20for%20Documentation%20page
+                   */
                    mySSH.RunCommand( sendPackages );
 
-                        // dnu install ??
+                   // dnu install ??
 
 
-                        // dnx ef database update sur le serveur de prod
-                        mySSH.RunCommand( updateDatabase );
+                   // dnx ef database update sur le serveur de prod
+                   mySSH.RunCommand( updateDatabase );
 
-                        // dnx web pour lancer le serveur OTD
-                        mySSH.RunCommand( runServer );
+                   // dnx web pour lancer le serveur OTD
+                   mySSH.RunCommand( runServer );
 
-                        // Fin du déploiement
-                        mySSH.Disconnect();
+                   // Fin du déploiement
+                   mySSH.Disconnect();
                }
            } );
 
-            Task( "Default" ).IsDependentOn( "Verbosity" ).IsDependentOn( "Deploy" );
+            Task( "Default" ).IsDependentOn( "Verbosity" ).IsDependentOn( "Build-And-Pack" );
 
 
         }
