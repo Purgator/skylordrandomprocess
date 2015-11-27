@@ -166,10 +166,10 @@ namespace CodeCake
                     using( SshClient mySSH = new SshClient( "10.8.99.163", 22, login, password ) )
                {
                    mySSH.Connect();
-                   string stopServer = "";
+                   string stopServer = "killall -SIGSTOP coreclr";
                    string sendPackages = "";
                    string updateDatabase = "";
-                   string runServer = "";
+                   string runServer = "dnx web -p \"pathOfTheProject\"";
 
                         // Arrête le serveur qui tourne
                         mySSH.RunCommand( stopServer );
