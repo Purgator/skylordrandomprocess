@@ -14,5 +14,5 @@ install:
 - dnu commands install SimpleGitVersion.DNXCommands
 - dnu restore
 build_script:
-- dnx -p CodeCakeBuilder CodeCakeBuilder -nointeraction
+- dnx -p src/CodeCakeBuilder CodeCakeBuilder -nointeraction
 test: off
