@@ -7,7 +7,7 @@ environment:
     secure: QVVZdMDAB+h7xdgg5hUH0A==
   password:
     secure: cP2Y38dqqK4GfySbblU1Fg==
-	
+
 install:
 - CodeCakeBuilder/Bootstrap.cmd
 - dnvm use -p -r clr 1.0.0-rc1-final
