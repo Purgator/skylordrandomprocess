@@ -9,7 +9,7 @@ environment:
     secure: cP2Y38dqqK4GfySbblU1Fg==
 
 install:
-- src/CodeCakeBuilder/Bootstrap.ps1
+- ps: src/CodeCakeBuilder/Bootstrap.ps1
 - dnvm use -p -r clr 1.0.0-rc1-final
 - dnu commands install SimpleGitVersion.DNXCommands
 - dnu restore
