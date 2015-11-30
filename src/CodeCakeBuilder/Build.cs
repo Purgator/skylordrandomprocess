@@ -60,6 +60,33 @@ namespace CodeCake
                         Console.WriteLine( project.ProjectName );
                     }
                 } );
+
+            Task( "Clean" )
+              .Does( () =>
+              {
+                  Cake.CleanDirectories( "*/bin" + configuration,
+                          ( d ) =>
+                          {
+                              foreach( DNXProjectFile projet in dnxSolution.Projects )
+                              {
+                                  if( d.Path.Segments.Contains( projet.ProjectName ) )
+                                      return true;
+                              }
+                              return false;
+                          } );
+
+                  Cake.CleanDirectories( "*/obj" + configuration,
+                         ( d ) =>
+                         {
+                             foreach( DNXProjectFile projet in dnxSolution.Projects )
+                             {
+                                 if( d.Path.Segments.Contains( projet.ProjectName ) )
+                                     return true;
+                             }
+                             return false;
+                         } );
+              } );
+
             Task( "Check-Repository" )
               .Does( () =>
               {
@@ -96,31 +123,7 @@ namespace CodeCake
                     }
                 } );
 
-            Task( "Clean" )
-                .Does( () =>
-                {
-                    Cake.CleanDirectories( "*/bin" + configuration,
-                            ( d ) =>
-                            {
-                                foreach( DNXProjectFile projet in dnxSolution.Projects )
-                                {
-                                    if( d.Path.Segments.Contains( projet.ProjectName ) )
-                                        return true;
-                                }
-                                return false;
-                            } );
-
-                    Cake.CleanDirectories( "*/obj" + configuration,
-                           ( d ) =>
-                           {
-                               foreach( DNXProjectFile projet in dnxSolution.Projects )
-                               {
-                                   if( d.Path.Segments.Contains( projet.ProjectName ) )
-                                       return true;
-                               }
-                               return false;
-                           } );
-                } );
+          
 
             Task( "Unit-Testing" )
                .IsDependentOn( "Set-ProjectVersion" )
