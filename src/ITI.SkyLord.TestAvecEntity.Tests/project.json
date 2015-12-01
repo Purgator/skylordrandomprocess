@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0-Absolutely-Invalid",
+  "version": "2.0.0",
   "description": "ITI.SkyLord.TestAvecEntity.Tests Class Library",
   "authors": [ "KevinRoussel" ],
   "tags": [ "" ],
@@ -13,7 +13,7 @@
         }
     },
     "dependencies": {
-        "ITI.SkyLord.TestAvecEntity": "0.0.0-Absolutely-Invalid",
+        "ITI.SkyLord.TestAvecEntity": "2.0.0",
         "NUnitLite": "3.0.0-rc-2"
     },
     "commands": {

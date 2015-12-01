@@ -164,19 +164,28 @@ namespace CodeCake
                } );
 
             Task( "Deploy" )
-           .IsDependentOn( "Build-And-Pack" )
+          //.IsDependentOn( "Build-And-Pack" )
            .Does( () =>
            {
 
-               var login = Environment.GetEnvironmentVariable("login");
-               var password= Environment.GetEnvironmentVariable("password");
+               string login = Environment.GetEnvironmentVariable("login");
+               string password = Environment.GetEnvironmentVariable("password");
+               login = "ubuntu";
+               password = "proutogobelin";
+               string ip = "labo.itinet.fr";
+               int port = 5322;
 
+              PrivateKeyFile privateKeyFile = new PrivateKeyFile("skylordPrivateKeyOtDOpenSsh.ppk", password);
+
+               AuthenticationMethod authentification = new PrivateKeyAuthenticationMethod(login, privateKeyFile);
+
+               ConnectionInfo connection = new ConnectionInfo(ip, port, login, authentification);
                /* 
                  Code référence
                  http://stackoverflow.com/questions/11169396/c-sharp-send-a-simple-ssh-command
                */
                // Se connecte en SSH à notre serveur de prod
-               using( SshClient mySSH = new SshClient( "10.8.99.163", 22, login, password ) )
+               using( SshClient mySSH = new SshClient( connection ) )
                {
                    mySSH.Connect();
                    string stopServer = "killall -SIGSTOP coreclr";
@@ -184,31 +193,33 @@ namespace CodeCake
                    string updateDatabase = "";
                    string runServer = "dnx web -p \"pathOfTheProject\"";
 
+                   //  ScpClient scp = new ScpClient();
                    // Arrête le serveur qui tourne
-                   mySSH.RunCommand( stopServer );
+                   //mySSH.RunCommand( stopServer );
 
                    // Envoi le package sur le serveur de prod en SFTP
                    /* 
                        POUR LA DOC SFTP 
                        https://sshnet.codeplex.com/wikipage?title=Draft%20for%20Documentation%20page
                    */
-                   mySSH.RunCommand( sendPackages );
+                   //  mySSH.RunCommand( sendPackages );
 
                    // dnu install ??
-
+                   
+                   mySSH.RunCommand( "rm testOTD" );
 
                    // dnx ef database update sur le serveur de prod
-                   mySSH.RunCommand( updateDatabase );
+                  // mySSH.RunCommand( updateDatabase );
 
                    // dnx web pour lancer le serveur OTD
-                   mySSH.RunCommand( runServer );
+                  // mySSH.RunCommand( runServer );
 
                    // Fin du déploiement
                    mySSH.Disconnect();
                }
            } );
 
-            Task( "Default" ).IsDependentOn( "Verbosity" ).IsDependentOn( "Build-And-Pack" );
+            Task( "Default" ).IsDependentOn( "Verbosity" ).IsDependentOn( "Deploy" );
 
 
         }
