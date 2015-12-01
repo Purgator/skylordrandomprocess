@@ -180,11 +180,17 @@ namespace CodeCake
                AuthenticationMethod authentification = new PrivateKeyAuthenticationMethod(login, privateKeyFile);
 
                ConnectionInfo connection = new ConnectionInfo(ip, port, login, authentification);
-               /* 
-                 Code référence
-                 http://stackoverflow.com/questions/11169396/c-sharp-send-a-simple-ssh-command
-               */
-               // Se connecte en SSH à notre serveur de prod
+
+               DNXSupportOTD.RunSuccessfullCmd( Cake, "dnu publish" );
+
+               using( ScpClient scp = new ScpClient( connection ) )
+               {
+                   scp.Connect();
+                   scp.Upload( new DirectoryInfo( "ITI.SkyLord.TestAvecEntity\\bin\\output\\approot" ), "." );
+                   scp.Disconnect();
+               }
+
+              // Se connecte en SSH à notre serveur de prod
                using( SshClient mySSH = new SshClient( connection ) )
                {
                    mySSH.Connect();
@@ -198,21 +204,20 @@ namespace CodeCake
                    //mySSH.RunCommand( stopServer );
 
                    // Envoi le package sur le serveur de prod en SFTP
-                   /* 
-                       POUR LA DOC SFTP 
-                       https://sshnet.codeplex.com/wikipage?title=Draft%20for%20Documentation%20page
-                   */
+
                    //  mySSH.RunCommand( sendPackages );
 
                    // dnu install ??
-                   
-                   mySSH.RunCommand( "rm testOTD" );
+
+
+
+                 //  mySSH.RunCommand( "rm testOTD" );
 
                    // dnx ef database update sur le serveur de prod
-                  // mySSH.RunCommand( updateDatabase );
+                   // mySSH.RunCommand( updateDatabase );
 
                    // dnx web pour lancer le serveur OTD
-                  // mySSH.RunCommand( runServer );
+                   // mySSH.RunCommand( runServer );
 
                    // Fin du déploiement
                    mySSH.Disconnect();
