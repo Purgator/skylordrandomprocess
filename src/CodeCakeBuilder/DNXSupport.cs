@@ -23,6 +23,16 @@ namespace Code.Cake
             return _dnxRTI ?? (_dnxRTI = LoadDNXRuntimeInformation( context ));
         }
 
+        public static void DNUPublish( this ICakeContext context, Action<DNUPublishSettings> config )
+        {
+            var c = new DNUPublishSettings();
+            config( c );
+            var b = new StringBuilder();
+            b.Append( "dnu " );
+            c.ToString( b );
+            RunSuccessfullCmd( context, b.ToString() );
+        }
+
 
         /// <summary>
         /// Runs cmd.exe with a command line and throws an exception if the command exits with a result that is not 0.

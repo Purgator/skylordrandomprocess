@@ -181,12 +181,16 @@ namespace CodeCake
 
                ConnectionInfo connection = new ConnectionInfo(ip, port, login, authentification);
 
-               DNXSupportOTD.RunSuccessfullCmd( Cake, "dnu publish" );
+               Cake.DNUPublish( p =>
+               {
+                   p.Quiet = true;
+                   p.NoSource = true;
+               } );
 
                using( ScpClient scp = new ScpClient( connection ) )
                {
                    scp.Connect();
-                   scp.Upload( new DirectoryInfo( "ITI.SkyLord.TestAvecEntity\\bin\\output\\approot" ), "." );
+                   scp.Upload( new DirectoryInfo( "ITI.SkyLord.TestAvecEntity\\bin\\output\\approot\\output" ), "." );
                    scp.Disconnect();
                }
 
