@@ -17,6 +17,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ITI.SkyLord.TestAvecEntity.
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CodeCakeBuilder", "src\CodeCakeBuilder\CodeCakeBuilder.xproj", "{0C85B05D-1C5D-4E0B-A5EA-3888D35BB7F8}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Encrypter", "src\Encrypter\Encrypter.xproj", "{E7B11BBC-E56F-408E-921C-E5E9F4014EFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{0C85B05D-1C5D-4E0B-A5EA-3888D35BB7F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C85B05D-1C5D-4E0B-A5EA-3888D35BB7F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C85B05D-1C5D-4E0B-A5EA-3888D35BB7F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7B11BBC-E56F-408E-921C-E5E9F4014EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7B11BBC-E56F-408E-921C-E5E9F4014EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7B11BBC-E56F-408E-921C-E5E9F4014EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B11BBC-E56F-408E-921C-E5E9F4014EFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,5 +49,6 @@ Global
 		{E0A4D245-552C-44ED-A22C-69FBC478D9B8} = {56B481DF-DCF2-4397-9AA8-A2AA14DB9045}
 		{5AF6FF2B-C056-4856-8FCA-471F4FF170D4} = {56B481DF-DCF2-4397-9AA8-A2AA14DB9045}
 		{0C85B05D-1C5D-4E0B-A5EA-3888D35BB7F8} = {56B481DF-DCF2-4397-9AA8-A2AA14DB9045}
+		{E7B11BBC-E56F-408E-921C-E5E9F4014EFB} = {56B481DF-DCF2-4397-9AA8-A2AA14DB9045}
 	EndGlobalSection
 EndGlobal
