@@ -1,26 +1,15 @@
-﻿using Cake.Common;
-using Cake.Common.Solution;
-using Cake.Common.IO;
-using Cake.Common.Tools.MSBuild;
-using Cake.Common.Tools.NuGet;
+﻿using Cake.Common.IO;
 using Cake.Core;
 using Cake.Common.Diagnostics;
 using SimpleGitVersion;
 using Code.Cake;
-using Cake.Common.Build.AppVeyor;
-using Cake.Common.Tools.NuGet.Pack;
 using System;
 using System.Linq;
-using Cake.Common.Tools.SignTool;
 using Cake.Core.Diagnostics;
-using Cake.Common.Text;
-using Cake.Common.Tools.NuGet.Push;
 using System.IO;
 using System.Collections.Generic;
-using System.Diagnostics;
-using Microsoft.Extensions.PlatformAbstractions;
 using Renci.SshNet;
-using Cake.Core.IO;
+using Cake.Common;
 
 namespace CodeCake
 {
@@ -123,7 +112,7 @@ namespace CodeCake
                     }
                 } );
 
-          
+
 
             Task( "Unit-Testing" )
                .IsDependentOn( "Set-ProjectVersion" )
@@ -164,20 +153,25 @@ namespace CodeCake
                } );
 
             Task( "Deploy" )
-          //.IsDependentOn( "Build-And-Pack" )
+           //.IsDependentOn( "Build-And-Pack" )
            .Does( () =>
            {
 
                string login = Environment.GetEnvironmentVariable("login");
                string password = Environment.GetEnvironmentVariable("password");
+               string privateKey = Environment.GetEnvironmentVariable("privateKey");
+
                login = "ubuntu";
                password = "proutogobelin";
                string ip = "labo.itinet.fr";
                int port = 5322;
 
-              PrivateKeyFile privateKeyFile = new PrivateKeyFile("skylordPrivateKeyOtDOpenSsh.ppk", password);
+               PrivateKeyFile privateKeyFile = new PrivateKeyFile("skylordPrivateKeyOtDOpenSsh.ppk.enc", password);
+               Cake.SecureFileUncrypt( "skylordPrivateKeyOtDOpenSsh.ppk.enc", password );
 
                AuthenticationMethod authentification = new PrivateKeyAuthenticationMethod(login, privateKeyFile);
+
+               Console.ReadKey();
 
                ConnectionInfo connection = new ConnectionInfo(ip, port, login, authentification);
 
@@ -194,7 +188,7 @@ namespace CodeCake
                    scp.Disconnect();
                }
 
-              // Se connecte en SSH à notre serveur de prod
+               // Se connecte en SSH à notre serveur de prod
                using( SshClient mySSH = new SshClient( connection ) )
                {
                    mySSH.Connect();
@@ -215,7 +209,7 @@ namespace CodeCake
 
 
 
-                 //  mySSH.RunCommand( "rm testOTD" );
+                   //  mySSH.RunCommand( "rm testOTD" );
 
                    // dnx ef database update sur le serveur de prod
                    // mySSH.RunCommand( updateDatabase );
@@ -229,7 +223,6 @@ namespace CodeCake
            } );
 
             Task( "Default" ).IsDependentOn( "Verbosity" ).IsDependentOn( "Deploy" );
-
 
         }
     }
