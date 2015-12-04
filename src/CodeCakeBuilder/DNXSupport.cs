@@ -28,7 +28,7 @@ namespace Code.Cake
             var c = new DNUPublishSettings();
             config( c );
             var b = new StringBuilder();
-            b.Append( "dnu " );
+            b.Append( "dnu publish " );
             c.ToString( b );
             RunSuccessfullCmd( context, b.ToString() );
         }

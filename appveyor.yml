@@ -7,6 +7,8 @@ environment:
     secure: QVVZdMDAB+h7xdgg5hUH0A==
   password:
     secure: cP2Y38dqqK4GfySbblU1Fg==
+  passphrase:
+    secure: RKPq17ndwy0ryql05TmGrw==
 
 install:
 - ps: src/CodeCakeBuilder/Bootstrap.ps1

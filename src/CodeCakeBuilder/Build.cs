@@ -153,72 +153,80 @@ namespace CodeCake
                } );
 
             Task( "Deploy" )
-           //.IsDependentOn( "Build-And-Pack" )
+           .IsDependentOn( "Build-And-Pack" )
            .Does( () =>
            {
 
                string login = Environment.GetEnvironmentVariable("login");
                string password = Environment.GetEnvironmentVariable("password");
-               string privateKey = Environment.GetEnvironmentVariable("privateKey");
+               string passphrase = Environment.GetEnvironmentVariable("passphrase");
 
+               //temp, only for local test
                login = "ubuntu";
                password = "proutogobelin";
+               passphrase = "golemdecaca";
+
                string ip = "labo.itinet.fr";
                int port = 5322;
 
-               PrivateKeyFile privateKeyFile = new PrivateKeyFile("skylordPrivateKeyOtDOpenSsh.ppk.enc", password);
-               Cake.SecureFileUncrypt( "skylordPrivateKeyOtDOpenSsh.ppk.enc", password );
+               ip = "10.8.99.163";
+               port = 22;
 
-               AuthenticationMethod authentification = new PrivateKeyAuthenticationMethod(login, privateKeyFile);
-
-               Console.ReadKey();
-
-               ConnectionInfo connection = new ConnectionInfo(ip, port, login, authentification);
 
                Cake.DNUPublish( p =>
                {
                    p.Quiet = true;
                    p.NoSource = true;
+                   p.ProjectPaths.UnionWith( projectsToPublish.Select( pp => pp.ProjectFilePath ) );
                } );
 
-               using( ScpClient scp = new ScpClient( connection ) )
+               using( TemporaryFile tmpPrivateKeyFile = Cake.SecureFileUncrypt( "skylordPrivateKeyOtDOpenSsh.ppk.enc", passphrase ) )
                {
-                   scp.Connect();
-                   scp.Upload( new DirectoryInfo( "ITI.SkyLord.TestAvecEntity\\bin\\output\\approot\\output" ), "." );
-                   scp.Disconnect();
-               }
+                   PrivateKeyFile privateKeyFile = new PrivateKeyFile(tmpPrivateKeyFile.Path, password);
 
-               // Se connecte en SSH à notre serveur de prod
-               using( SshClient mySSH = new SshClient( connection ) )
-               {
-                   mySSH.Connect();
-                   string stopServer = "killall -SIGSTOP coreclr";
-                   string sendPackages = "";
-                   string updateDatabase = "";
-                   string runServer = "dnx web -p \"pathOfTheProject\"";
+                   AuthenticationMethod authentification = new PrivateKeyAuthenticationMethod(login, privateKeyFile);
 
-                   //  ScpClient scp = new ScpClient();
-                   // Arrête le serveur qui tourne
-                   //mySSH.RunCommand( stopServer );
-
-                   // Envoi le package sur le serveur de prod en SFTP
-
-                   //  mySSH.RunCommand( sendPackages );
-
-                   // dnu install ??
+                   ConnectionInfo connection = new ConnectionInfo(ip, port, login, authentification);
 
 
 
-                   //  mySSH.RunCommand( "rm testOTD" );
+                   using( ScpClient scp = new ScpClient( connection ) )
+                   {
+                       scp.Connect();
+                       scp.Upload( new DirectoryInfo( "ITI.SkyLord.TestAvecEntity\\bin\\output" ), "." );
+                       scp.Disconnect();
+                   }
+                   using( SshClient mySSH = new SshClient( connection ) )
+                   {
+                       mySSH.Connect();
+                       string stopServer = "killall -SIGSTOP coreclr";
+                       string sendPackages = "";
+                       string updateDatabase = "";
+                       string runServer = "dnx web -p \"pathOfTheProject\"";
 
-                   // dnx ef database update sur le serveur de prod
-                   // mySSH.RunCommand( updateDatabase );
+                       //  ScpClient scp = new ScpClient();
+                       // Arrête le serveur qui tourne
+                       //mySSH.RunCommand( stopServer );
 
-                   // dnx web pour lancer le serveur OTD
-                   // mySSH.RunCommand( runServer );
+                       // Envoi le package sur le serveur de prod en SFTP
 
-                   // Fin du déploiement
-                   mySSH.Disconnect();
+                       //  mySSH.RunCommand( sendPackages );
+
+                       // dnu install ??
+
+
+
+                       //  mySSH.RunCommand( "rm testOTD" );
+
+                       // dnx ef database update sur le serveur de prod
+                       // mySSH.RunCommand( updateDatabase );
+
+                       // dnx web pour lancer le serveur OTD
+                       // mySSH.RunCommand( runServer );
+
+                       // Fin du déploiement
+                       mySSH.Disconnect();
+                   }
                }
            } );
 

@@ -26,7 +26,7 @@ namespace Code.Cake
         public bool Quiet { get; set; }
 
         /// <summary>
-        /// The project paths to pack. When empty, defaults to current directory.
+        /// The project paths to publish. When empty, defaults to current directory.
         /// </summary>
         public ISet<string> ProjectPaths { get { return _projectPaths; } }
 
