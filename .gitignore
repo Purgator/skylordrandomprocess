@@ -197,3 +197,4 @@ FakesAssemblies/
 
 **project.lock.json
 src/skylordPrivateKeyOtDOpenSsh.ppk
+src/ITI.SkyLord.TestAvecEntity/wwwroot

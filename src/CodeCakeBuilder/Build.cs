@@ -74,6 +74,17 @@ namespace CodeCake
                              }
                              return false;
                          } );
+
+                  Cake.CleanDirectories( "*/wwwroot" + configuration,
+                         ( d ) =>
+                         {
+                             foreach( DNXProjectFile projet in dnxSolution.Projects )
+                             {
+                                 if( d.Path.Segments.Contains( projet.ProjectName ) )
+                                     return true;
+                             }
+                             return false;
+                         } );
               } );
 
             Task( "Check-Repository" )
@@ -161,17 +172,20 @@ namespace CodeCake
                string password = Environment.GetEnvironmentVariable("password");
                string passphrase = Environment.GetEnvironmentVariable("passphrase");
 
-               //temp, only for local test
-               login = "ubuntu";
-               password = "proutogobelin";
-               passphrase = "golemdecaca";
-
                string ip = "labo.itinet.fr";
                int port = 5322;
 
-               ip = "10.8.99.163";
-               port = 22;
-
+               if( Cake.Arguments.HasArgument( "local" ) )
+               {
+                   login = "ubuntu";
+                   password = "proutogobelin";
+                   passphrase = "golemdecaca";
+                   if( Cake.Arguments.GetArgument( "local" ) == "full" )
+                   {
+                       ip = "10.8.99.163";
+                       port = 22;
+                   }
+               }
 
                Cake.DNUPublish( p =>
                {
