@@ -243,7 +243,6 @@ namespace CodeCake
                    }
                }
            } );
-
             Task( "Default" ).IsDependentOn( "Verbosity" ).IsDependentOn( "Deploy" );
 
         }
