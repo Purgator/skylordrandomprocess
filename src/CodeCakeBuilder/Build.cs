@@ -172,11 +172,14 @@ namespace CodeCake
                string password = Environment.GetEnvironmentVariable("password");
                string passphrase = Environment.GetEnvironmentVariable("passphrase");
 
+               Console.WriteLine( "XXXXXXXXXXXXXXXXXXXXXXXX\nXXXXXXXXXXXXXXXXXXXXX\nXXXXXXXXXXXXXXXXXXXXXXXX\n\n\n\n\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" + login + " " + password+  " " + passphrase );
+
                string ip = "labo.itinet.fr";
                int port = 5322;
 
                if( Cake.Arguments.HasArgument( "local" ) )
                {
+                   // ici il va falloir prendre des fichiers en local pour lire les infos et pas les push sur github
                    login = "ubuntu";
                    password = "proutogobelin";
                    passphrase = "golemdecaca";
