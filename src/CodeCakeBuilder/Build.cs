@@ -207,39 +207,34 @@ namespace CodeCake
 
                    //useless commentaire pour commit
 
-                   using( ScpClient scp = new ScpClient( connection ) )
-                   {
-                       scp.Connect();
-                       scp.Upload( new DirectoryInfo( "ITI.SkyLord.TestAvecEntity\\bin\\output" ), "." );
-                       scp.Disconnect();
-                   }
+
                    using( SshClient mySSH = new SshClient( connection ) )
                    {
                        mySSH.Connect();
-                       string stopServer = "killall -SIGSTOP coreclr";
-                       string sendPackages = "";
+                       string stopServer = "sudo killall -SIGSTOP dnx";
+                       // Ici pourquoi pas prendre le numéro de version et créer un dossier avec pour garder un historique
+                       string archivePreviousVersion = "rm -rf previousVersion/* && mv * previousVersion";
+                       string dnuRestore = "dnu restore --no-cache approot";
+                       string enableExecute = "chmod +x approot/web";
                        string updateDatabase = "";
-                       string runServer = "dnx web -p \"pathOfTheProject\"";
-
-                       //  ScpClient scp = new ScpClient();
-                       // Arrête le serveur qui tourne
-                       //mySSH.RunCommand( stopServer );
-
-                       // Envoi le package sur le serveur de prod en SFTP
-
-                       //  mySSH.RunCommand( sendPackages );
-
-                       // dnu install ??
+                       string runServer = "nohup ./approot/web &";
 
 
+                       mySSH.RunCommand( stopServer );
 
-                       //  mySSH.RunCommand( "rm testOTD" );
+                       mySSH.RunCommand( archivePreviousVersion );
 
-                       // dnx ef database update sur le serveur de prod
-                       // mySSH.RunCommand( updateDatabase );
+                       using( ScpClient scp = new ScpClient( connection ) )
+                       {
+                           scp.Connect();
+                           scp.Upload( new DirectoryInfo( "ITI.SkyLord.TestAvecEntity\\bin\\output" ), "." );
+                           scp.Disconnect();
+                       }
 
-                       // dnx web pour lancer le serveur OTD
-                       // mySSH.RunCommand( runServer );
+
+                        mySSH.RunCommand( dnuRestore );
+                       mySSH.RunCommand( enableExecute );
+                       mySSH.RunCommand( runServer );
 
                        // Fin du déploiement
                        mySSH.Disconnect();
