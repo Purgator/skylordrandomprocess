@@ -211,13 +211,14 @@ namespace CodeCake
                    using( SshClient mySSH = new SshClient( connection ) )
                    {
                        mySSH.Connect();
-                       string stopServer = "sudo killall -SIGSTOP dnx";
+                       string stopServer = "killall -SIGSTOP dnx";
                        // Ici pourquoi pas prendre le numéro de version et créer un dossier avec pour garder un historique
-                       string archivePreviousVersion = "rm -rf previousVersion/* && mv * previousVersion";
-                       string dnuRestore = "dnu restore --no-cache approot";
-                       string enableExecute = "chmod +x approot/web";
-                       string updateDatabase = "";
-                       string runServer = "nohup ./approot/web &";
+                       string projectPath = "LeChat/";
+                       string archivePreviousVersion = "mkdir -p " + projectPath + "previousVersion && rm -rf "+ projectPath + "previousVersion/* && mv "+ projectPath + "* "+ projectPath + "previousVersion";
+                       string dnuRestore = "dnu restore --no-cache " + projectPath + "approot";
+                       string enableExecute = "chmod +x " + projectPath + "approot/web";
+                       string updateDatabase = "dnx ef database update -c SetupContext " + projectPath;
+                       string runServer = "nohup ./" + projectPath + "approot/web &";
 
 
                        mySSH.RunCommand( stopServer );
