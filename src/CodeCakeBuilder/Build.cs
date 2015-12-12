@@ -228,7 +228,7 @@ namespace CodeCake
                        using( ScpClient scp = new ScpClient( connection ) )
                        {
                            scp.Connect();
-                           scp.Upload( new DirectoryInfo( "ITI.SkyLord.TestAvecEntity\\bin\\output" ), "." + projectPath );
+                           scp.Upload( new DirectoryInfo( "ITI.SkyLord.TestAvecEntity\\bin\\output" ), projectPath );
                            scp.Disconnect();
                        }
 
